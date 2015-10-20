@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HelsmoortelUtil:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HelsmoortelUtil_jar</output-path>
+    <root id="archive" name="HelsmoortelUtil.jar">
+      <element id="module-output" name="HelsmoortelUtil" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
