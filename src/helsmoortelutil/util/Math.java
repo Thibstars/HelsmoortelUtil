@@ -257,9 +257,7 @@ public final class Math {
      */
     public static double bodyMassIndex(double mass, double height, boolean isMetresAndKilograms) {
         double baseFormula = bodyMassIndex(mass, height);
-        if (isMetresAndKilograms) {
-            return baseFormula;
-        }
+        if (isMetresAndKilograms) return baseFormula;
         else return baseFormula * BMI_CONVERSION_POUNDS_AND_INCHES;
     }
 
