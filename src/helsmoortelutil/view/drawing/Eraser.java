@@ -11,16 +11,16 @@ import java.awt.*;
  * @author Thibault Helsmoortel
  */
 
-public class Gum extends DrawTool {
+public class Eraser extends DrawTool {
 
     public static final Color DEFAULT_COLOR = Color.WHITE;
 
-    public Gum() {
+    public Eraser() {
         setColor(Color.WHITE);
     }
 
     //TODO add multiple constructors
 
-    //TODO add a gum cursor
+    //TODO add an eraser cursor
     //TODO complete class
 }

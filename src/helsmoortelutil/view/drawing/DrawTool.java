@@ -12,7 +12,7 @@ import java.awt.*;
  */
 
 public abstract class DrawTool {
-    //TODO add complete JavaDoc
+    //TODO complete JavaDoc
     public static final Point DEFAULT_POINT = new Point(0,0);
     public static final int DEFAULT_SIZE = 1;
     public static final Stroke DEFAULT_STROKE = new BasicStroke(DEFAULT_SIZE);
