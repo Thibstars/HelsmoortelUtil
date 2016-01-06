@@ -32,7 +32,7 @@ public class LengthConverter {
     /**
      * Converts a measurement to metres.
      * @param measurement the measurement to convert
-     * @param unit the unit to convert to
+     * @param unit the unit to convert from
      * @return the equivalent metres
      */
     public static double toMetres(double measurement, Unit unit) {
@@ -43,7 +43,7 @@ public class LengthConverter {
     /**
      * Converts a measurement from metres.
      * @param measurement the measurement to convert
-     * @param unit the unit to convert from
+     * @param unit the unit to convert to
      * @return the equivalent value in the given unit
      */
     public static double fromMetres(double measurement, Unit unit) {
