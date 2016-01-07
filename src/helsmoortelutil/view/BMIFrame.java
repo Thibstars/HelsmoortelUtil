@@ -10,8 +10,14 @@ import helsmoortelutil.view.interfaces.Viewable;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Thibault Helsmoortel
+ */
 
-//TODO add JavaDoc
+/**
+ * Class for representation of a BMIPanel.
+ */
+
 public class BMIFrame extends JFrame implements Viewable {
     private BMIPanel panel;
 
@@ -39,14 +45,9 @@ public class BMIFrame extends JFrame implements Viewable {
 
     @Override
     public void addListeners() {
-
     }
 
     @Override
     public void createLayout() {
-    }
-
-    public static void main(String[] args) {
-        new BMIFrame();
     }
 }

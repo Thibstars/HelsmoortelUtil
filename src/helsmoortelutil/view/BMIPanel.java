@@ -10,7 +10,13 @@ import helsmoortelutil.view.interfaces.Viewable;
 import javax.swing.*;
 import java.awt.*;
 
-//TODO add JavaDoc
+/**
+ * @author Thibault Helsmoortel
+ */
+
+/**
+ * Class to sample a BMI calculator.
+ */
 public class BMIPanel extends JPanel implements Viewable {
     private ButtonGroup btnGroup;
     private JRadioButton rbMetric, rbImperial;
