@@ -11,8 +11,13 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
 
-//TODO add JavaDoc
+/**
+ * @author Thibault Helsmoortel
+ */
 
+/**
+ * Class for JTextAreas with a maximum amount of characters.
+ */
 public class CharLimitedArea extends JTextArea {
     private int maxChars;
 
@@ -45,18 +50,34 @@ public class CharLimitedArea extends JTextArea {
         this.maxChars = maxChars;
     }
 
+    /**
+     * Returns the maximum amount of characters.
+     * @return the maximum amount of characters
+     */
     public int getMaxChars() {
         return maxChars;
     }
 
+    /**
+     * Sets the maximum amount of characters.
+     * @param maxChars the new maximum amount of characters
+     */
     public void setMaxChars(int maxChars) {
         this.maxChars = maxChars;
     }
 
+    /**
+     * Returns the current character count of the area.
+     * @return the current character count
+     */
     public int getCurrentCharCount() {
         return getText().length();
     }
 
+    /**
+     * Returns the amount of available characters left.
+     * @return the amount of available characters left
+     */
     public int getCharsLeft() {
         return maxChars - getText().length();
     }
@@ -66,6 +87,9 @@ public class CharLimitedArea extends JTextArea {
         return new LimitDocument();
     }
 
+    /**
+     * Inner class forcing the limit on the area.
+     */
     private class LimitDocument extends PlainDocument {
 
         @Override
