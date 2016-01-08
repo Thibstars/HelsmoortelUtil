@@ -47,7 +47,7 @@ public final class CommandFactory {
      * Searches for a command from the commandSet and returns it if a command was found.
      * @param command the name of the command to search for
      * @return the matching command, if any
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException command was not found
      */
     public static Command find(String command) throws IllegalArgumentException {
         for (Command c : commandSet) {
@@ -80,7 +80,7 @@ public final class CommandFactory {
      * Fires the method linked to the command.
      * @param command the name of the command to execute
      * @return the result of the invoked method
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException command was not found
      */
     public static Object execute(String command) throws IllegalArgumentException {
         Command c = find(command);
@@ -92,7 +92,7 @@ public final class CommandFactory {
      * @param command the name of the command to execute
      * @param args argument(s) to be passed to the method
      * @return the result of the invoked method
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException command was not found
      */
     public static Object execute(String command, Object[] args) throws IllegalArgumentException {
         Command c = find(command);
@@ -110,7 +110,7 @@ public final class CommandFactory {
     /**
      * Blocks the cloning of the CommandFactory
      * @return nothing
-     * @throws CloneNotSupportedException
+     * @throws CloneNotSupportedException cloning not supported
      */
     @Override
     protected Object clone() throws CloneNotSupportedException {

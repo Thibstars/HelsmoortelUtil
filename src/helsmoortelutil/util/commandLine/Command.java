@@ -58,9 +58,7 @@ public class Command {
         try {
             if (args != null)  result = method.invoke(null, args);
             else result = method.invoke(null);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return result;

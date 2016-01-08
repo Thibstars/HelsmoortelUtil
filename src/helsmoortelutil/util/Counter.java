@@ -174,10 +174,9 @@ public class Counter {
 
     /**
      * Increments the counter (with the set hop value).
-     * <br>
+     *
      * Example: count = 5; hop = 1 (default hop value)
      * After method execution: count = 6 (similar to count++!)
-     * </br>
      */
     public void increment() {
         if (count + hop >= minVal && count + hop <= maxVal) this.count += this.hop;
@@ -186,10 +185,8 @@ public class Counter {
 
     /**
      * Decrements the counter (with the set hop value).
-     * <br>
      * Example: count = 5; hop = 1 (default hop value)
      * After method execution: count = 4 (similar to count--!)
-     * </br>
      */
     public void decrement() {
         if (count - hop >= minVal && count - hop <= maxVal) this.count -= this.hop;
