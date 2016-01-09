@@ -6,21 +6,11 @@
 package helsmoortelutil.util.converters;
 
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import helsmoortelutil.util.economy.Currency;
+import helsmoortelutil.util.economy.Currency.CurrencyCode;
+import helsmoortelutil.util.economy.CurrencyFactory;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.math.BigDecimal;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Thibault Helsmoortel
@@ -31,67 +21,6 @@ import java.util.List;
  */
 
 public class CurrencyConverter {
-    //ISO codes of supported currencies
-    public enum CurrencyCode {
-        AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, EUR, GBP, HKD, HRK, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD,
-        PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR
-    }
-
-    private static List<Currency> currencies;
-
-    /**
-     * Fetches currencies and their respective rates from the ECB.
-     * @throws IOException
-     * @throws ParserConfigurationException
-     * @throws SAXException
-     */
-    private static void fetchCurrencies() throws IOException, ParserConfigurationException, SAXException {
-        //Get xml file with currencies and rates from ECB
-        URL xmlURL = new URL("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
-        InputStream xml = xmlURL.openStream();
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.parse(xml);
-
-        currencies = new ArrayList<>();
-
-        NodeList list = doc.getElementsByTagName("Cube");
-        for (int i = 0; i < list.getLength(); i++) {
-            Node node = list.item(i);
-            String name;
-            double rate;
-
-            if (node.hasAttributes() && node.getAttributes().getNamedItem("currency") != null
-                    && node.getAttributes().getNamedItem("rate") != null) {
-                name = node.getAttributes().getNamedItem("currency").getTextContent();
-                rate = Double.parseDouble(node.getAttributes().getNamedItem("rate").getTextContent());
-                currencies.add(new Currency(name, rate));
-            }
-
-            //Add the base currency, being euro
-            currencies.add(new Currency("EUR", 1));
-
-            //Sort currencies list alphabetically on name
-            Collections.sort(currencies, (o1, o2) -> o1.name.compareToIgnoreCase(o2.name));
-        }
-    }
-
-    /**
-     * Returns the currency corresponding to the given ISO code.
-     * @param code the ISO code of the currency
-     * @return the currency corresponding to the given ISO code
-     */
-    public static Currency getCurrencyByCode(CurrencyCode code) {
-        try {
-            fetchCurrencies();
-        } catch (IOException | ParserConfigurationException | SAXException e) {
-            e.printStackTrace();
-        }
-
-        for (Currency currency : currencies) if (currency.name.equalsIgnoreCase(code.toString())) return currency;
-
-        return null;
-        }
 
     /**
      * Principal method of the conversion class.
@@ -102,14 +31,8 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to the target currency
      */
     public static BigDecimal convert(BigDecimal value, CurrencyCode source, CurrencyCode target) {
-        try {
-            fetchCurrencies();
-        } catch (IOException | ParserConfigurationException | SAXException e) {
-            e.printStackTrace();
-        }
-
-        double srcRate = getCurrencyByCode(source).rate;
-        double trgtRate = getCurrencyByCode(target).rate;
+        double srcRate = CurrencyFactory.getCurrencyByCode(source).getRate();
+        double trgtRate = CurrencyFactory.getCurrencyByCode(target).getRate();
 
         return value.divide(BigDecimal.valueOf(srcRate), 10, BigDecimal.ROUND_CEILING)
                 .multiply(BigDecimal.valueOf(trgtRate));
@@ -124,8 +47,8 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to the target currency
      */
     public static BigDecimal convert(BigDecimal value, Currency source, Currency target){
-        return value.divide(BigDecimal.valueOf(source.rate), 10, BigDecimal.ROUND_CEILING)
-                .multiply(BigDecimal.valueOf(target.rate));
+        return value.divide(BigDecimal.valueOf(source.getRate()), 10, BigDecimal.ROUND_CEILING)
+                .multiply(BigDecimal.valueOf(target.getRate()));
     }
 
     //region Currency specific converters
@@ -147,7 +70,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to AUD
      */
     public static BigDecimal toAUD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.AUD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.AUD));
     }
 
     /**
@@ -167,7 +90,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to BGN
      */
     public static BigDecimal toBGN(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.BGN));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.BGN));
     }
 
     /**
@@ -187,7 +110,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to BRL
      */
     public static BigDecimal toBRL(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.BRL));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.BRL));
     }
 
     /**
@@ -207,7 +130,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to CAD
      */
     public static BigDecimal toCAD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.CAD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.CAD));
     }
 
     /**
@@ -227,7 +150,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to CHF
      */
     public static BigDecimal toCHF(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.CHF));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.CHF));
     }
 
     /**
@@ -247,7 +170,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to CNY
      */
     public static BigDecimal toCNY(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.CNY));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.CNY));
     }
 
     /**
@@ -267,7 +190,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to CZK
      */
     public static BigDecimal toCZK(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.CZK));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.CZK));
     }
     /**
      * Converts and returns a BigDecimal value based on source currency.
@@ -286,7 +209,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to DKK
      */
     public static BigDecimal toDKK(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.DKK));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.DKK));
     }
 
     /**
@@ -306,7 +229,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to EUR
      */
     public static BigDecimal toEUR(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.EUR));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.EUR));
     }
 
     /**
@@ -326,7 +249,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to GBP
      */
     public static BigDecimal toGBP(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.GBP));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.GBP));
     }
 
     /**
@@ -346,7 +269,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to HKD
      */
     public static BigDecimal toHKD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.HKD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.HKD));
     }
 
     /**
@@ -366,7 +289,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to HRK
      */
     public static BigDecimal toHRK(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.HRK));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.HRK));
     }
 
     /**
@@ -386,7 +309,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to HUF
      */
     public static BigDecimal toHUF(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.HUF));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.HUF));
     }
 
     /**
@@ -406,7 +329,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to IDR
      */
     public static BigDecimal toIDR(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.IDR));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.IDR));
     }
 
     /**
@@ -426,7 +349,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to ILS
      */
     public static BigDecimal toILS(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.ILS));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.ILS));
     }
 
     /**
@@ -446,7 +369,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to INR
      */
     public static BigDecimal toINR(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.INR));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.INR));
     }
 
     /**
@@ -466,7 +389,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to JPY
      */
     public static BigDecimal toJPY(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.JPY));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.JPY));
     }
 
     /**
@@ -486,7 +409,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to KRW
      */
     public static BigDecimal toKRW(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.KRW));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.KRW));
     }
 
     /**
@@ -506,7 +429,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to MXN
      */
     public static BigDecimal toMXN(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.MXN));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.MXN));
     }
 
     /**
@@ -526,7 +449,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to MYR
      */
     public static BigDecimal toMYR(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.MYR));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.MYR));
     }
 
     /**
@@ -546,7 +469,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to NOK
      */
     public static BigDecimal toNOK(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.NOK));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.NOK));
     }
 
     /**
@@ -566,7 +489,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to NZD
      */
     public static BigDecimal toNZD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.NZD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.NZD));
     }
 
     /**
@@ -586,7 +509,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to PHP
      */
     public static BigDecimal toPHP(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.PHP));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.PHP));
     }
 
     /**
@@ -606,7 +529,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to PLN
      */
     public static BigDecimal toPLN(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.PLN));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.PLN));
     }
 
     /**
@@ -626,7 +549,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to RON
      */
     public static BigDecimal toRON(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.RON));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.RON));
     }
 
     /**
@@ -646,7 +569,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to RUB
      */
     public static BigDecimal toRUB(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.RUB));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.RUB));
     }
 
     /**
@@ -666,7 +589,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to SEK
      */
     public static BigDecimal toSEK(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.SEK));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.SEK));
     }
 
     /**
@@ -686,7 +609,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to SGD
      */
     public static BigDecimal toSGD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.SGD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.SGD));
     }
 
     /**
@@ -706,7 +629,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to THB
      */
     public static BigDecimal toTHB(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.THB));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.THB));
     }
 
     /**
@@ -726,7 +649,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to TRY
      */
     public static BigDecimal toTRY(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.TRY));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.TRY));
     }
 
     /**
@@ -746,7 +669,7 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to USD
      */
     public static BigDecimal toUSD(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.USD));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.USD));
     }
 
     /**
@@ -766,26 +689,8 @@ public class CurrencyConverter {
      * @return the converted value from the source currency to ZAR
      */
     public static BigDecimal toZAR(BigDecimal value, Currency source) {
-        return convert(value, source, getCurrencyByCode(CurrencyCode.ZAR));
+        return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.ZAR));
     }
 
     //endregion
-
-    /**
-     * Inner Class used to represent currencies.
-     */
-    public static class Currency {
-        private final String name;
-        private final double rate;
-
-        public Currency(String name, double rate) {
-            this.name = name;
-            this.rate = rate;
-        }
-
-        @Override
-        public String toString() {
-            return "Currency: " + name + " - Rate: " + rate;
-        }
-    }
 }

@@ -4,6 +4,7 @@ helsmoortelutil.tests
 helsmoortelutil.util
 helsmoortelutil.util.commandLine
 helsmoortelutil.util.converters
+helsmoortelutil.util.economy
 helsmoortelutil.view
 helsmoortelutil.view.drawing
 helsmoortelutil.view.interfaces

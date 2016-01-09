@@ -3,7 +3,7 @@
  * Do not copy or (re)distribute without written permission.
  */
 
-package helsmoortelutil.util;
+package helsmoortelutil.util.economy;
 
 /**
  * @author Thibault Helsmoortel
