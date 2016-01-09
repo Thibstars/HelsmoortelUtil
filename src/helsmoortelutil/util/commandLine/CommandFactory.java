@@ -114,6 +114,6 @@ public final class CommandFactory {
      */
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return new CloneNotSupportedException("Clone not supported");
     }
 }
