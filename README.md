@@ -7,3 +7,5 @@ as well as other useful classes. The library was initially created for Thibault'
 Feel free to use this library, though do not (re)distribute it without any written permission (ask permission by contacting me via http://www.thibaulthelsmoortel.be).
 
 All code written by Thibault Helsmoortel.
+
+Online JavaDoc: http://thibaulthelsmoortel.be/helsmoortelutil/doc/
