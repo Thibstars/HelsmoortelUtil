@@ -22,6 +22,7 @@ public class ProductDescription {
      * Constructor initializing id, price and description.
      * @param itemId the ProductDescription's id
      * @param price the ProductDescription's price
+     * @param VATPercentage the ProductDescription's VAT percentage
      * @param description the ProductDescription's description
      */
     public ProductDescription(int itemId, double price, double VATPercentage,  String description) {

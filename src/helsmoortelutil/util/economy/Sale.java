@@ -52,6 +52,7 @@ public class Sale {
      * Adds an item to the sale, if there is an active SalesLine for the item.
      * @param itemID item identifier
      * @param quantity amount of items to add
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void addItem(int itemID, int quantity) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -70,6 +71,7 @@ public class Sale {
      * Adds an item to the sale.
      * @param item SalesLine item to add
      * @param quantity amount of items to add
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void addItem(SalesLineItem item, int quantity) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -87,6 +89,7 @@ public class Sale {
      * Removes an item from the sale, if there is an active SalesLine for the item.
      * @param itemID item identifier
      * @param quantity amount of items to remove
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void removeItem(int itemID, int quantity) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -106,6 +109,7 @@ public class Sale {
      * Removes an item from the sale, if there is an active SalesLine for the item.
      * @param item item to remove
      * @param quantity amount of items to remove
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void removeItem(SalesLineItem item, int quantity) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -115,6 +119,7 @@ public class Sale {
     /**
      * Adds a SalesLine to the sale if it doesn't yet exists.
      * @param line SalesLine to add
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void addSalesLine(SalesLine line) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -127,6 +132,7 @@ public class Sale {
     /**
      * Removes a SalesLine from the sale if it already exists.
      * @param line SalesLine to remove
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void removeSalesLine(SalesLine line) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -195,6 +201,7 @@ public class Sale {
     /**
      * Sets the sale's identifier.
      * @param saleID the new sale's identifier
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void setSaleID(int saleID) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
@@ -232,6 +239,7 @@ public class Sale {
     /**
      * Make a payment for the sale.
      * @param payment the payment to make
+     * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
     public void makePayment(Payment payment) throws SaleAlreadyCompletedException {
         if (isComplete) throw new SaleAlreadyCompletedException();
