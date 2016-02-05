@@ -13,19 +13,13 @@ package helsmoortelutil.util.economy;
  * Class representing an item in a sales line.
  */
 public class SalesLineItem {
-    private int itemID;
-    private double price;
-    private String description;
+    private ProductDescription description;
 
     /**
      * Constructor.
-     * @param itemID item identifier
-     * @param price item's price
-     * @param description item's description
+     * @param description product description for the line item.
      */
-    public SalesLineItem(int itemID, double price, String description) {
-        this.itemID = itemID;
-        this.price = price;
+    public SalesLineItem(ProductDescription description) {
         this.description = description;
     }
 
@@ -34,15 +28,7 @@ public class SalesLineItem {
      * @return the item identifier
      */
     public int getItemID() {
-        return itemID;
-    }
-
-    /**
-     * Sets the item identifier.
-     * @param itemID the new item identifier
-     */
-    public void setItemID(int itemID) {
-        this.itemID = itemID;
+        return description.getItemId();
     }
 
     /**
@@ -50,15 +36,23 @@ public class SalesLineItem {
      * @return the price of the item
      */
     public double getPrice() {
-        return price;
+        return description.getPrice();
     }
 
     /**
-     * Sets the price of the item.
-     * @param price the new price of the item
+     * Returns to VAT of the item.
+     * @return the VAT of the item
      */
-    public void setPrice(double price) {
-        this.price = price;
+    public double getVAT() {
+        return description.getVAT();
+    }
+
+    /**
+     * Returns the VAT percentage of the item.
+     * @return the VAT percentage of the item
+     */
+    public double getVATPercentage() {
+        return description.getVATPercentage();
     }
 
     /**
@@ -66,15 +60,7 @@ public class SalesLineItem {
      * @return the item's description
      */
     public String getDescription() {
-        return description;
-    }
-
-    /**
-     * Sets the item's description.
-     * @param description the new item description
-     */
-    public void setDescription(String description) {
-        this.description = description;
+        return description.getDescription();
     }
 
     /**
@@ -83,6 +69,6 @@ public class SalesLineItem {
      */
     @Override
     public String toString() {
-        return String.format("%-10d%-10.2f%-50s", itemID, price, description);
+        return String.format("%-10d%-10.2f%-50s", getItemID(), getPrice(), getDescription());
     }
 }

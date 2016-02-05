@@ -9,6 +9,8 @@ package helsmoortelutil.util.economy;
  * @author Thibault Helsmoortel
  */
 
+import java.text.DecimalFormat;
+
 /**
  * Class for representation of a sales line.
  */
@@ -75,11 +77,35 @@ public class SalesLine {
     }
 
     /**
-     * Returns the total sum of the sales line.
-     * @return the total sum of the sales line
+     * Returns the total sum of the sales line, before VAT.
+     * @return the total sum of the sales line, before VAT
+     */
+    public double getSubTotal() {
+        return item.getPrice() * quantity;
+    }
+
+    /**
+     * Returns the total amount of VAT of the sales line.
+     * @return the total amount of VAT of the sales line
+     */
+    public double getTotalVAT() {
+        return item.getVAT() * quantity;
+    }
+
+    /**
+     * Returns the VAT percentage of the sales line
+     * @return the VAT percentage of the sales line
+     */
+    public double getVATPercentage() {
+        return item.getVATPercentage();
+    }
+
+    /**
+     * Returns the total sum of the sales line, after VAT.
+     * @return the total sum of the sales line, after VAT
      */
     public double getTotal() {
-        return item.getPrice()*quantity;
+        return getSubTotal() + getTotalVAT();
     }
 
     /**
@@ -88,6 +114,11 @@ public class SalesLine {
      */
     @Override
     public String toString() {
-        return String.format("%-67s%-10d%-20.2f", item.toString(), quantity, getTotal());
+        DecimalFormat df = new DecimalFormat("0.00");
+        String totalVAT = df.format(getTotalVAT());
+        String VATPercentage = df.format(getVATPercentage() * 100);
+        return String.format("%-67s%-10d%-20.2f%-22s%-20.2f",
+                item.toString(), quantity, getSubTotal(),
+                (totalVAT + " (%" + VATPercentage  + ")"), getTotal());
     }
 }

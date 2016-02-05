@@ -16,9 +16,12 @@ import java.util.List;
 /**
  * Class for representation of sales.
  */
+//TODO add discount support
 public class Sale {
     private int saleID;
     private Date creationDate;
+    private boolean isComplete;
+    private Payment payment;
 
     private List<SalesLine> salesLines;
 
@@ -29,6 +32,7 @@ public class Sale {
     public Sale(int saleID) {
         this.saleID = saleID;
         this.creationDate = new Date();
+        this.isComplete = false;
         salesLines = new ArrayList<>();
     }
 
@@ -40,6 +44,7 @@ public class Sale {
     public Sale(int saleID, Date creationDate) {
         this.saleID = saleID;
         this.creationDate = creationDate;
+        this.isComplete = false;
         salesLines = new ArrayList<>();
     }
 
@@ -48,14 +53,17 @@ public class Sale {
      * @param itemID item identifier
      * @param quantity amount of items to add
      */
-    public void addItem(int itemID, int quantity) {
-        for (SalesLine line : salesLines) {
-            if (line.getItem().getItemID() == itemID){
-                line.addItem(quantity);
-                break;
+    public void addItem(int itemID, int quantity) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            for (SalesLine line : salesLines) {
+                if (line.getItem().getItemID() == itemID) {
+                    line.addItem(quantity);
+                    break;
+                }
             }
+            throw new RuntimeException("No SalesLine for given itemID found.");
         }
-        throw new RuntimeException("No SalesLine for given itemID found.");
     }
 
     /**
@@ -63,12 +71,15 @@ public class Sale {
      * @param item SalesLine item to add
      * @param quantity amount of items to add
      */
-    public void addItem(SalesLineItem item, int quantity) {
-        try {
-            addItem(item.getItemID(), quantity);
-        } catch (RuntimeException e) {
-            e.getStackTrace();
-            salesLines.add(new SalesLine(item, quantity));
+    public void addItem(SalesLineItem item, int quantity) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            try {
+                addItem(item.getItemID(), quantity);
+            } catch (RuntimeException e) {
+                e.getStackTrace();
+                salesLines.add(new SalesLine(item, quantity));
+            }
         }
     }
 
@@ -77,15 +88,18 @@ public class Sale {
      * @param itemID item identifier
      * @param quantity amount of items to remove
      */
-    public void removeItem(int itemID, int quantity) {
-        for (SalesLine line : salesLines) {
-            if (line.getItem().getItemID() == itemID){
-                line.removeItem(quantity);
-                if (line.getQuantity() <= 0) removeSalesLine(line);
-                break;
+    public void removeItem(int itemID, int quantity) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            for (SalesLine line : salesLines) {
+                if (line.getItem().getItemID() == itemID) {
+                    line.removeItem(quantity);
+                    if (line.getQuantity() <= 0) removeSalesLine(line);
+                    break;
+                }
             }
+            throw new RuntimeException("No SalesLine for given itemID found.");
         }
-        throw new RuntimeException("No SalesLine for given itemID found.");
     }
 
     /**
@@ -93,26 +107,33 @@ public class Sale {
      * @param item item to remove
      * @param quantity amount of items to remove
      */
-    public void removeItem(SalesLineItem item, int quantity) {
-        removeItem(item.getItemID(), quantity);
+    public void removeItem(SalesLineItem item, int quantity) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else removeItem(item.getItemID(), quantity);
     }
 
     /**
      * Adds a SalesLine to the sale if it doesn't yet exists.
      * @param line SalesLine to add
      */
-    public void addSalesLine(SalesLine line) {
-        if (!salesLines.contains(line)) salesLines.add(line);
-        else throw new RuntimeException("SalesLine already in list.");
+    public void addSalesLine(SalesLine line) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            if (!salesLines.contains(line)) salesLines.add(line);
+            else throw new RuntimeException("SalesLine already in list.");
+        }
     }
 
     /**
      * Removes a SalesLine from the sale if it already exists.
      * @param line SalesLine to remove
      */
-    public void removeSalesLine(SalesLine line) {
-        if (salesLines.contains(line)) salesLines.remove(line);
-        else throw new RuntimeException("SalesLine could not be removed.");
+    public void removeSalesLine(SalesLine line) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            if (salesLines.contains(line)) salesLines.remove(line);
+            else throw new RuntimeException("SalesLine could not be removed.");
+        }
     }
 
     /**
@@ -127,7 +148,7 @@ public class Sale {
      * Returns the total amount of items in the sale.
      * @return the total amount of items in the sale
      */
-    public int getItemCOunt() {
+    public int getItemCount() {
         int items = 0;
         for (SalesLine line : salesLines) {
             items += line.getQuantity();
@@ -136,15 +157,31 @@ public class Sale {
     }
 
     /**
-     * Returns the total sum of the sale.
-     * @return the total sum of the sale
+     * Returns the total sum of the sale, before VAT.
+     * @return the total sum of the sale, before VAT
+     */
+    public double getSubTotal() {
+        double total = 0.0;
+        for (SalesLine line : salesLines) total += line.getSubTotal();
+        return total;
+    }
+
+    /**
+     * Returns to total amount of VAT of the sale.
+     * @return the total amount of VAT of the sale
+     */
+    public double getTotalVAT() {
+        double total = 0.0;
+        for (SalesLine line : salesLines) total += line.getTotalVAT();
+        return total;
+    }
+
+    /**
+     * Returns the total sum of the sale, after VAT
+     * @return the total sum of the sale, after VAT
      */
     public double getTotal() {
-        double total = 0.0;
-        for (SalesLine line : salesLines) {
-            total += line.getTotal();
-        }
-        return total;
+        return getSubTotal() + getTotalVAT();
     }
 
     /**
@@ -159,8 +196,9 @@ public class Sale {
      * Sets the sale's identifier.
      * @param saleID the new sale's identifier
      */
-    public void setSaleID(int saleID) {
-        this.saleID = saleID;
+    public void setSaleID(int saleID) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else this.saleID = saleID;
     }
 
     /**
@@ -172,11 +210,51 @@ public class Sale {
     }
 
     /**
+     * Returns true if the sale is complete.
+     * @return true if the sale is complete
+     */
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    /**
+     * Completes the sale, if possible.
+     * @return true if sale completed, false if otherwise
+     */
+    public boolean complete() {
+        if (salesLines.size() <= 0 && getItemCount() <= 0 && payment == null) return false;
+        else {
+            this.isComplete = true;
+            return isComplete;
+        }
+    }
+
+    /**
+     * Make a payment for the sale.
+     * @param payment the payment to make
+     */
+    public void makePayment(Payment payment) throws SaleAlreadyCompletedException {
+        if (isComplete) throw new SaleAlreadyCompletedException();
+        else {
+            if (this.payment == null) this.payment = payment;
+            else throw new RuntimeException("Payment cannot be overridden.");
+        }
+    }
+
+    /**
+     * Returns the sale's payment.
+     * @return the sale's payment
+     */
+    public Payment getPayment() {
+        return payment;
+    }
+
+    /**
      * Returns the list of SalesLines.
      * @return the list of SalesLines
      */
     public List<SalesLine> getSalesLines() {
-        return salesLines;
+    return new ArrayList<>(salesLines);
     }
 
     /**
@@ -198,16 +276,29 @@ public class Sale {
     @Override
     public String toString() {
         String out = "Sale: " + saleID + "\t- " + creationDate + "\n";
-        out += String.format("%-10s%-10s%-50s%-10s%-22s", "itemID", "Price", "Description", "Quantity", "Total");
+        out += String.format("%-10s%-10s%-50s%-10s%-22s%-22s%-22s",
+                "itemID", "Price", "Description", "Quantity", "Price", "VAT", "Total");
         out += "\n";
-        out += String.format("%0" + 102 + "d", 0).replace("0", "-");
+        out += String.format("%0" + 135 + "d", 0).replace("0", "-");
         out += "\n";
         for (SalesLine line : salesLines) {
             out += line.toString() + "\n";
         }
-        out += String.format("%0" + 102 + "d", 0).replace("0", "-");
+        out += String.format("%0" + 135 + "d", 0).replace("0", "-");
         out += "\n";
-        out += String.format("%-80s%-20.2f", "Total", getTotal());
+        out += String.format("%-80s%-20.2f%-22.2f%-20.2f", "Total", getSubTotal(), getTotalVAT(), getTotal());
         return out;
+    }
+
+    /**
+     * Inner class used to throw Exceptions when the sale has already been completed.
+     */
+    protected class SaleAlreadyCompletedException extends Exception {
+        /**
+         * Default constructor. Adds an Exception message.
+         */
+        public SaleAlreadyCompletedException() {
+            super("The sale is already completed.");
+        }
     }
 }
