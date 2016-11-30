@@ -6,11 +6,9 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.io;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Interface for reading and writable Objects
+ *
+ * @author Thibault Helsmoortel
  */
 
 public interface ReadWritable extends Readable, Writable {

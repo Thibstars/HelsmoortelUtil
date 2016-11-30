@@ -6,17 +6,16 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.io;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Interface for reading Objects
+ *
+ * @author Thibault Helsmoortel
  */
 
 public interface Readable {
 
     /**
      * Method for reading Objects
+     *
      * @return the read Object
      */
     public Object read();
