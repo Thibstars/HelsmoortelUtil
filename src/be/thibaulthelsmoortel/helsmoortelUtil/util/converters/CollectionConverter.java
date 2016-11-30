@@ -52,6 +52,4 @@ public class CollectionConverter {
         }
         return arrayList;
     }
-
-    //TODO implement more methods
 }
