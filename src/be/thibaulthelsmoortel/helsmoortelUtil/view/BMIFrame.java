@@ -25,7 +25,7 @@ public class BMIFrame extends JFrame implements Viewable {
         super("Body Mass Index");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        initialiseComponents();
+        initComponents();
         addComponents();
         addListeners();
         createLayout();
@@ -34,7 +34,7 @@ public class BMIFrame extends JFrame implements Viewable {
     }
 
     @Override
-    public void initialiseComponents() {
+    public void initComponents() {
         panel = new BMIPanel();
     }
 

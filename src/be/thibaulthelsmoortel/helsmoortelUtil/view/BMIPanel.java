@@ -25,7 +25,7 @@ public class BMIPanel extends JPanel implements Viewable {
     private JButton btnCalc;
 
     public BMIPanel() {
-        initialiseComponents();
+        initComponents();
         createLayout();
         addComponents();
         addListeners();
@@ -33,7 +33,7 @@ public class BMIPanel extends JPanel implements Viewable {
     }
 
     @Override
-    public void initialiseComponents() {
+    public void initComponents() {
         btnGroup = new ButtonGroup();
         rbMetric = new JRadioButton("Kg and metres");
         rbMetric.setSelected(true);

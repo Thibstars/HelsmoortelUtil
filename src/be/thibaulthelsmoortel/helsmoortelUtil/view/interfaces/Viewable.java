@@ -6,19 +6,21 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.view.interfaces;
 
 /**
+ * Global interface for view classes.
+ *
  * @author Thibault Helsmoortel
- */
-
-/**
- * Interface meant to be implemented by JFrames, JPanels,... to simplify their creation.
  */
 public interface Viewable {
 
     /**
      * Method to initialise components
      */
-    void initialiseComponents();
+    void initComponents();
 
+    /**
+     * Method to create and add layout
+     */
+    void createLayout();
 
     /**
      * Method to add components
@@ -29,9 +31,4 @@ public interface Viewable {
      * Method to add listeners
      */
     void addListeners();
-
-    /**
-     * Method to create and add layout
-     */
-    void createLayout();
 }
