@@ -11,11 +11,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class extending JTextField to create fields reserved for Integers.
+ *
+ * @author Thibault Helsmoortel
  */
 public class NumberField extends JTextField {
     private int integer;
@@ -33,6 +31,7 @@ public class NumberField extends JTextField {
 
     /**
      * Constructor setting minimum and maximum lengths of the field.
+     *
      * @param minLength minimum length of the field
      * @param maxLength maximum length of the field
      */
@@ -57,6 +56,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method returning the field's value (in stead of getText()).
+     *
      * @return the value of the field.
      */
     public int getInteger() {
@@ -65,6 +65,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to set the field's value (in stead of setText()).
+     *
      * @param integer value to place on the field.
      */
     public void setInteger(int integer) {
@@ -73,6 +74,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method returning the validity of the field.
+     *
      * @return the validity of the field.
      */
     public boolean isValid() {
@@ -96,13 +98,11 @@ public class NumberField extends JTextField {
         if ((hasMaxLength && tmp.length() > maxLength) || (hasMinLength && tmp.length() < minLength)) {
             NumberField.this.setBackground(invalidColor);
             isValid = false;
-        }
-        else if (!tmp.isEmpty() && tmp.matches("[0-9]+$")) {
+        } else if (!tmp.isEmpty() && tmp.matches("[0-9]+$")) {
             NumberField.this.setBackground(validColor);
             isValid = true;
             integer = Integer.parseInt(tmp);
-        }
-        else {
+        } else {
             NumberField.this.setBackground(invalidColor);
             isValid = false;
         }
@@ -110,6 +110,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to set the maximum length of the field.
+     *
      * @param maxLength value for the new maximum length.
      */
     public void setMaxLength(int maxLength) {
@@ -119,6 +120,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to set the minimum length of the field.
+     *
      * @param minLength value for the new minimum length.
      */
     public void setMinLength(int minLength) {
@@ -128,6 +130,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to get the color for a valid field.
+     *
      * @return color a valid field will be set to.
      */
     public Color getValidColor() {
@@ -136,6 +139,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to set the color for a valid field.
+     *
      * @param validColor color to set valid fields to.
      */
     public void setValidColor(Color validColor) {
@@ -144,6 +148,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to get the color for an invalid field.
+     *
      * @return color an invalid field will be set to.
      */
     public Color getInvalidColor() {
@@ -152,6 +157,7 @@ public class NumberField extends JTextField {
 
     /**
      * Method to set the color for an invalid field.
+     *
      * @param invalidColor color to set invalid fields to.
      */
     public void setInvalidColor(Color invalidColor) {

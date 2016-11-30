@@ -5,7 +5,11 @@
 
 package be.thibaulthelsmoortel.helsmoortelUtil.view.drawing;
 
-//TODO add JavaDoc
+/**
+ * Enum containing different shapes.
+ *
+ * @author Thibault Helsmoortel
+ */
 public enum Shape {
     OVAL, RECTANGLE, ROUNDED_RECTANGLE, TRAPEZIUM, PARALLELOGRAM, TRIANGLE, POLYGON
 }

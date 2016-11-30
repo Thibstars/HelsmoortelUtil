@@ -12,15 +12,18 @@ import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for JTextAreas with a maximum amount of characters.
+ *
+ * @author Thibault Helsmoortel
  */
 public class CharLimitedArea extends JTextArea {
     private int maxChars;
 
+    /**
+     * Class constructor specifying max chars.
+     *
+     * @param maxChars maximum amount of characters
+     */
     public CharLimitedArea(int maxChars) {
         this.maxChars = maxChars;
     }
@@ -30,21 +33,51 @@ public class CharLimitedArea extends JTextArea {
         this.maxChars = maxChars;
     }
 
+    /**
+     * Class constructor specifying rows, columns, max chars.
+     *
+     * @param rows     amount of rows
+     * @param columns  amount of columns
+     * @param maxChars maximum amount of characters
+     */
     public CharLimitedArea(int rows, int columns, int maxChars) {
         super(rows, columns);
         this.maxChars = maxChars;
     }
 
+    /**
+     * Class constructor specifying text, rows, columns, max chars.
+     *
+     * @param text     the area's text
+     * @param rows     amount of rows
+     * @param columns  amount of columns
+     * @param maxChars maximum amount of characters
+     */
     public CharLimitedArea(String text, int rows, int columns, int maxChars) {
         super(text, rows, columns);
         this.maxChars = maxChars;
     }
 
+    /**
+     * Class constructor specifying document and max chars.
+     *
+     * @param doc      the area's document
+     * @param maxChars maximum amount of characters
+     */
     public CharLimitedArea(Document doc, int maxChars) {
         super(doc);
         this.maxChars = maxChars;
     }
 
+    /**
+     * Class constructor specifying document, text, rows, columns, max chars.
+     *
+     * @param doc      the area's document
+     * @param text     the area's text
+     * @param rows     amount of rows
+     * @param columns  amount of columns
+     * @param maxChars maximum amount of characters
+     */
     public CharLimitedArea(Document doc, String text, int rows, int columns, int maxChars) {
         super(doc, text, rows, columns);
         this.maxChars = maxChars;
@@ -52,6 +85,7 @@ public class CharLimitedArea extends JTextArea {
 
     /**
      * Returns the maximum amount of characters.
+     *
      * @return the maximum amount of characters
      */
     public int getMaxChars() {
@@ -60,6 +94,7 @@ public class CharLimitedArea extends JTextArea {
 
     /**
      * Sets the maximum amount of characters.
+     *
      * @param maxChars the new maximum amount of characters
      */
     public void setMaxChars(int maxChars) {
@@ -68,6 +103,7 @@ public class CharLimitedArea extends JTextArea {
 
     /**
      * Returns the current character count of the area.
+     *
      * @return the current character count
      */
     public int getCurrentCharCount() {
@@ -76,6 +112,7 @@ public class CharLimitedArea extends JTextArea {
 
     /**
      * Returns the amount of available characters left.
+     *
      * @return the amount of available characters left
      */
     public int getCharsLeft() {

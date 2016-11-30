@@ -9,19 +9,23 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Class for notification labels
+ *
  * @author Thibault Helsmoortel
  */
 
 public class NotificationLabel extends JLabel{
-    //TODO write JavaDoc
 
-    public enum State {SUCCES, DEFAULT, WARNING};
-
-    private String notificationMessage;
     public static final Color SUCCESS_COLOR = Color.GREEN;
     public static final Color DEFAULT_COLOR = Color.LIGHT_GRAY;
     public static final Color WARNING_COLOR = Color.RED;
+    private String notificationMessage;
 
+    /**
+     * Class constructor specifying the notification message.
+     *
+     * @param notificationMessage the notification message
+     */
     public NotificationLabel(String notificationMessage) {
         super(notificationMessage);
         this.notificationMessage = notificationMessage;
@@ -30,11 +34,17 @@ public class NotificationLabel extends JLabel{
         setVisible(true);
     }
 
+    /**
+     * Class constructor specifying the notification message.
+     *
+     * @param notificationMessage the notification message
+     * @param state               the notification state
+     */
     public NotificationLabel(String notificationMessage, State state) {
         super(notificationMessage);
         this.notificationMessage = notificationMessage;
         switch (state) {
-            case SUCCES:
+            case SUCCESS:
                 setBackground(SUCCESS_COLOR);
                 break;
             case WARNING:
@@ -50,6 +60,8 @@ public class NotificationLabel extends JLabel{
         setOpaque(true);
         setVisible(true);
     }
+
+    public enum State {SUCCESS, DEFAULT, WARNING}
 
     //TODO add 'X' icon to remove the notification from its parent container
 }
