@@ -9,11 +9,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class to create simple String commands that are able to fire a specific method.
+ *
+ * @author Thibault Helsmoortel
  */
 public class Command {
     //The actual name of the command
@@ -25,8 +23,9 @@ public class Command {
 
     /**
      * Package local constructor
+     *
      * @param command the actual name of the command
-     * @param method the method to be executed
+     * @param method  the method to be executed
      */
     protected Command(String command, Method method) {
         this.command = command;
@@ -35,6 +34,7 @@ public class Command {
 
     /**
      * Returns the actual name of the command.
+     *
      * @return the name of the command
      */
     public String getCommand() {
@@ -43,6 +43,7 @@ public class Command {
 
     /**
      * Set the argument(s) to be passed to the executed method.
+     *
      * @param args argument(s) to be passed to the executed method
      */
     public void setArgs(Object[] args) {
@@ -51,12 +52,13 @@ public class Command {
 
     /**
      * Fires the method linked to the command along with the previously set argument(s), if any.
+     *
      * @return the result of the invoked event
      */
     public Object execute() {
         Object result = null;
         try {
-            if (args != null)  result = method.invoke(null, args);
+            if (args != null) result = method.invoke(null, args);
             else result = method.invoke(null);
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();

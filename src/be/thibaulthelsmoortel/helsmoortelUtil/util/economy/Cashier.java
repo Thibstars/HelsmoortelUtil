@@ -13,11 +13,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class representing a cashier.
+ *
+ * @author Thibault Helsmoortel
  */
 public class Cashier {
     private UUID cashierUUID;
@@ -26,7 +24,8 @@ public class Cashier {
 
     /**
      * Constructor setting the cashier's name and password.
-     * @param name the cashier's name
+     *
+     * @param name     the cashier's name
      * @param password the cashier's password
      */
     public Cashier(String name, String password) {
@@ -42,6 +41,7 @@ public class Cashier {
 
     /**
      * Encrypts a password with MD5 and transforms it to a String hash of the password.
+     *
      * @param password the password to hash
      * @return the hash value in the form of a String
      * @throws NoSuchAlgorithmException
@@ -57,6 +57,7 @@ public class Cashier {
 
     /**
      * Returns the chashier's UUID.
+     *
      * @return the cashier's UUID
      */
     public UUID getCashierUUID() {
@@ -65,6 +66,7 @@ public class Cashier {
 
     /**
      * Returns the cashier's name.
+     *
      * @return the cashier's name
      */
     public String getName() {

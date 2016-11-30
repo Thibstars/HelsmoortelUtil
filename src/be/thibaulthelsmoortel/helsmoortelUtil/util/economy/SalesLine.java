@@ -5,14 +5,12 @@
 
 package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 
-/**
- * @author Thibault Helsmoortel
- */
-
 import java.text.DecimalFormat;
 
 /**
  * Class for representation of a sales line.
+ *
+ * @author Thibault Helsmoortel
  */
 public class SalesLine {
     private SalesLineItem item;
@@ -20,7 +18,8 @@ public class SalesLine {
 
     /**
      * Constructor.
-     * @param item SalesLineItem for the SalesLine
+     *
+     * @param item     SalesLineItem for the SalesLine
      * @param quantity amount of SalesLineItems in the SalesLine
      */
     public SalesLine(SalesLineItem item, int quantity) {
@@ -30,6 +29,7 @@ public class SalesLine {
 
     /**
      * Adds an amount of the line's item.
+     *
      * @param quantity amount of the line's item to add
      */
     public void addItem(int quantity) {
@@ -38,6 +38,7 @@ public class SalesLine {
 
     /**
      * Removes an amount of the line's item.
+     *
      * @param quantity amount of the line's item to remove
      */
     public void removeItem(int quantity) {
@@ -46,6 +47,7 @@ public class SalesLine {
 
     /**
      * Returns the SalesLineItem of the SalesLine.
+     *
      * @return the SalesLineItem of the SalesLine
      */
     public SalesLineItem getItem() {
@@ -54,6 +56,7 @@ public class SalesLine {
 
     /**
      * Sets the SalesLineItem of the SalesLine.
+     *
      * @param item the SalesLineItem of the SalesLine.
      */
     public void setItem(SalesLineItem item) {
@@ -62,6 +65,7 @@ public class SalesLine {
 
     /**
      * Returns the amount of items in the sales line.
+     *
      * @return the amount of items in the sales line.
      */
     public int getQuantity() {
@@ -70,6 +74,7 @@ public class SalesLine {
 
     /**
      * Sets the amount of items in the sales line.
+     *
      * @param quantity the new amount of items in the sales line.
      */
     public void setQuantity(int quantity) {
@@ -78,6 +83,7 @@ public class SalesLine {
 
     /**
      * Returns the total sum of the sales line, before VAT.
+     *
      * @return the total sum of the sales line, before VAT
      */
     public double getSubTotal() {
@@ -86,6 +92,7 @@ public class SalesLine {
 
     /**
      * Returns the total amount of VAT of the sales line.
+     *
      * @return the total amount of VAT of the sales line
      */
     public double getTotalVAT() {
@@ -94,6 +101,7 @@ public class SalesLine {
 
     /**
      * Returns the VAT percentage of the sales line
+     *
      * @return the VAT percentage of the sales line
      */
     public double getVATPercentage() {
@@ -102,6 +110,7 @@ public class SalesLine {
 
     /**
      * Returns the total sum of the sales line, after VAT.
+     *
      * @return the total sum of the sales line, after VAT
      */
     public double getTotal() {
@@ -110,6 +119,7 @@ public class SalesLine {
 
     /**
      * Returns a String representation of the sales line.
+     *
      * @return a String representation of the sales line
      */
     @Override
@@ -119,6 +129,6 @@ public class SalesLine {
         String VATPercentage = df.format(getVATPercentage() * 100);
         return String.format("%-67s%-10d%-20.2f%-22s%-20.2f",
                 item.toString(), quantity, getSubTotal(),
-                (totalVAT + " (%" + VATPercentage  + ")"), getTotal());
+                (totalVAT + " (%" + VATPercentage + ")"), getTotal());
     }
 }

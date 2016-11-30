@@ -22,12 +22,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-
-/**
  * Factory class for managing currencies.
+ *
+ * @author Thibault Helsmoortel
  */
 public final class CurrencyFactory {
     private static CurrencyFactory classInstance = new CurrencyFactory();
@@ -49,9 +46,10 @@ public final class CurrencyFactory {
 
     /**
      * Fetches currencies and their respective rates from the ECB.
-     * @throws IOException an IOException
+     *
+     * @throws IOException                  an IOException
      * @throws ParserConfigurationException a ParserConfigurationException
-     * @throws SAXException a SAXException
+     * @throws SAXException                 a SAXException
      */
     public static void fetchCurrencies() throws IOException, ParserConfigurationException, SAXException {
         //Get xml file with currencies and rates from ECB
@@ -84,6 +82,7 @@ public final class CurrencyFactory {
 
     /**
      * Adds a currency to the list if it doesn't yet exist.
+     *
      * @param currency the currency to add
      */
     public static void addCurrency(Currency currency) {
@@ -93,6 +92,7 @@ public final class CurrencyFactory {
 
     /**
      * Returns the currencies list.
+     *
      * @return the currencies list
      */
     public static List<Currency> getCurrencies() {
@@ -101,6 +101,7 @@ public final class CurrencyFactory {
 
     /**
      * Returns the currency corresponding to the given ISO code.
+     *
      * @param code the ISO code of the currency
      * @return the currency corresponding to the given ISO code
      */
@@ -118,6 +119,7 @@ public final class CurrencyFactory {
 
     /**
      * Returns the currency corresponding to the given name.
+     *
      * @param name the name of the currency
      * @return the currency corresponding to the given name
      */
@@ -135,6 +137,7 @@ public final class CurrencyFactory {
 
     /**
      * Returns an instance of CurrencyFactory.
+     *
      * @return an instance of CurrencyFactory
      */
     public static synchronized CurrencyFactory getInstance() {
@@ -143,6 +146,7 @@ public final class CurrencyFactory {
 
     /**
      * Blocks the cloning of CurrencyFactory.
+     *
      * @return nothing
      * @throws CloneNotSupportedException cloning not supported
      */

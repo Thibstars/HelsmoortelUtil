@@ -8,11 +8,9 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 import java.util.HashSet;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class representing a product catalog.
+ *
+ * @author Thibault Helsmoortel
  */
 public class ProductCatalog {
     private HashSet<ProductDescription> catalog;
@@ -26,6 +24,7 @@ public class ProductCatalog {
 
     /**
      * Returns the catalog.
+     *
      * @return the catalog
      */
     public HashSet<ProductDescription> getCatalog() {
@@ -34,6 +33,7 @@ public class ProductCatalog {
 
     /**
      * Sets the catalog.
+     *
      * @param catalog the new catalog
      */
     public void setCatalog(HashSet<ProductDescription> catalog) {
@@ -42,6 +42,7 @@ public class ProductCatalog {
 
     /**
      * Adds a product to the catalog, if it does not exist.
+     *
      * @param description the ProductDescription to add
      */
     public void addProductDescription(ProductDescription description) {
@@ -51,6 +52,7 @@ public class ProductCatalog {
 
     /**
      * Removes a product from the catalog, if it exists.
+     *
      * @param description the ProductDescription to remove
      */
     public void removeProductDescription(ProductDescription description) {
@@ -60,6 +62,7 @@ public class ProductCatalog {
 
     /**
      * Removes a product from the catalog, if it exists, based on the item's id.
+     *
      * @param itemID the id of the ProductDescription to remove
      */
     public void removeProductDescription(int itemID) {
@@ -70,6 +73,7 @@ public class ProductCatalog {
 
     /**
      * Returns the ProductDescription with the given id.
+     *
      * @param itemID the ProductDescription's id
      * @return the ProductDescription with the given id
      */

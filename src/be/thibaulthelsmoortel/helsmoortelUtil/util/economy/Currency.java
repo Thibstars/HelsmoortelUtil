@@ -6,24 +6,16 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 
 /**
+ * Class used to represent currencies
+ *
  * @author Thibault Helsmoortel
  */
-
-/**
- * Class used to represent currencies
- */
 public class Currency {
-    //ISO codes of supported currencies
-    public enum CurrencyCode {
-        AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, EUR, GBP, HKD, HRK, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD,
-        PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR
-    }
-
     private final String name;
     private final double rate;
-
     /**
      * Default constructor
+     *
      * @param name the name of the currency
      * @param rate the rate of the currency
      */
@@ -34,6 +26,7 @@ public class Currency {
 
     /**
      * Returns the name of the currency.
+     *
      * @return the name of the currency
      */
     public String getName() {
@@ -42,6 +35,7 @@ public class Currency {
 
     /**
      * Returns the rate of the currency.
+     *
      * @return the rate of the currency
      */
     public double getRate() {
@@ -50,11 +44,18 @@ public class Currency {
 
     /**
      * Returns a representation of the currency.
+     *
      * @return a representation of the currency
      */
     @Override
     public String toString() {
         return "Currency: " + name + " - Rate: " + rate;
+    }
+
+    //ISO codes of supported currencies
+    public enum CurrencyCode {
+        AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, EUR, GBP, HKD, HRK, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD,
+        PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR
     }
 
 }

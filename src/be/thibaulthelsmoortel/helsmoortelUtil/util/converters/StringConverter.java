@@ -6,11 +6,9 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.converters;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for converting Strings.
+ *
+ * @author Thibault Helsmoortel
  */
 public class StringConverter {
 
@@ -180,6 +178,7 @@ public class StringConverter {
 
     /**
      * Converts and returns a String.
+     *
      * @param string the String to convert
      * @return the converted String.
      */

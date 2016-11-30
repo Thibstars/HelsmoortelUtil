@@ -8,23 +8,19 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 import java.util.Date;
 
 /**
+ * Class representing a payment.
+ *
  * @author Thibault Helsmoortel
  */
-
-/**
- * Class representing a payment.
- */
 public class Payment {
-    public enum PaymentType {CASH, BANK_TRANSFER, PAYPAL, PAYZA}
-
     private PaymentType paymentType;
     private double amount;
     private Date date;
-
     /**
      * Constructor setting type and amount.
+     *
      * @param paymentType the PaymentType
-     * @param amount the amount
+     * @param amount      the amount
      */
     public Payment(PaymentType paymentType, double amount) {
         this.paymentType = paymentType;
@@ -34,9 +30,10 @@ public class Payment {
 
     /**
      * Constructor setting type, amount and date.
+     *
      * @param paymentType the PaymentType
-     * @param amount the amount
-     * @param date the date
+     * @param amount      the amount
+     * @param date        the date
      */
     public Payment(PaymentType paymentType, double amount, Date date) {
         this.paymentType = paymentType;
@@ -46,6 +43,7 @@ public class Payment {
 
     /**
      * Returns the payment's type.
+     *
      * @return the PaymentType of the payment
      */
     public PaymentType getPaymentType() {
@@ -54,6 +52,7 @@ public class Payment {
 
     /**
      * Returns the amount of the payment.
+     *
      * @return the amount
      */
     public double getAmount() {
@@ -62,9 +61,12 @@ public class Payment {
 
     /**
      * Returns the date of the payment.
+     *
      * @return the date
      */
     public Date getDate() {
         return date;
     }
+
+    public enum PaymentType {CASH, BANK_TRANSFER, PAYPAL, PAYZA}
 }

@@ -10,11 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for converting dates to strings and vice versa.
+ *
+ * @author Thibault Helsmoortel
  */
 public class DateConverter {
     private static final String DEFAULT_STRING_FORMAT = "yyyy-MM-dd HH:mm:ss";
@@ -22,6 +20,7 @@ public class DateConverter {
 
     /**
      * Converts a date to a string.
+     *
      * @param date the date to convert
      * @return the converted date as a string
      */
@@ -31,7 +30,8 @@ public class DateConverter {
 
     /**
      * Converts a date to a string based on a date format.
-     * @param date the date to convert
+     *
+     * @param date       the date to convert
      * @param dateFormat the date format as a string
      * @return the converted date as a string
      */
@@ -42,7 +42,8 @@ public class DateConverter {
 
     /**
      * Converts a date to a string based on a date format.
-     * @param date the date to convert
+     *
+     * @param date       the date to convert
      * @param dateFormat the date format as a SimpleDateFormat
      * @return the converted date as a string
      */
@@ -55,6 +56,7 @@ public class DateConverter {
 
     /**
      * Converts a string to a date.
+     *
      * @param string the string to convert
      * @return the converted string as a date.
      */
@@ -64,7 +66,8 @@ public class DateConverter {
 
     /**
      * Converts a string to a date based on a date format.
-     * @param string the string to convert
+     *
+     * @param string     the string to convert
      * @param dateFormat the date format as a string
      * @return the converted string as a date
      */
@@ -82,7 +85,8 @@ public class DateConverter {
 
     /**
      * Converts a string to a date based on a date format.
-     * @param string the string to convert
+     *
+     * @param string     the string to convert
      * @param dateFormat the date format as a SimpleDateFormat
      * @return the converted string as a date
      */

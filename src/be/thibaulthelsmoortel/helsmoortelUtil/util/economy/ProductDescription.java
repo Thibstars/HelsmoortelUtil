@@ -6,11 +6,9 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class to represent a product (, the description, not the actual product instance).
+ *
+ * @author Thibault Helsmoortel
  */
 public class ProductDescription {
     private int itemId;
@@ -20,12 +18,13 @@ public class ProductDescription {
 
     /**
      * Constructor initializing id, price and description.
-     * @param itemId the ProductDescription's id
-     * @param price the ProductDescription's price
+     *
+     * @param itemId        the ProductDescription's id
+     * @param price         the ProductDescription's price
      * @param VATPercentage the ProductDescription's VAT percentage
-     * @param description the ProductDescription's description
+     * @param description   the ProductDescription's description
      */
-    public ProductDescription(int itemId, double price, double VATPercentage,  String description) {
+    public ProductDescription(int itemId, double price, double VATPercentage, String description) {
         this.itemId = itemId;
         this.price = price;
         this.VATPercentage = VATPercentage;
@@ -34,6 +33,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's id.
+     *
      * @return the id
      */
     public int getItemId() {
@@ -42,6 +42,7 @@ public class ProductDescription {
 
     /**
      * Sets the ProductDescription's id.
+     *
      * @param itemId the new id
      */
     public void setItemId(int itemId) {
@@ -50,6 +51,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's price, before VAT.
+     *
      * @return the price before VAT
      */
     public double getPrice() {
@@ -58,6 +60,7 @@ public class ProductDescription {
 
     /**
      * Sets the ProductDescription's price.
+     *
      * @param price the new price
      */
     public void setPrice(double price) {
@@ -66,6 +69,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's price after VAT.
+     *
      * @return the ProductDescription's price after VAT
      */
     public double getPriceAfterVAT() {
@@ -74,6 +78,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's VAT percentage.
+     *
      * @return the ProductDescription's VAT percentage
      */
     public double getVATPercentage() {
@@ -82,6 +87,7 @@ public class ProductDescription {
 
     /**
      * Sets the ProductDescription's VAT percentage.
+     *
      * @param VATPercentage the new VAT percentage
      */
     public void setVATPercentage(double VATPercentage) {
@@ -90,6 +96,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's VAT.
+     *
      * @return the ProductDescription's VAT
      */
     public double getVAT() {
@@ -98,6 +105,7 @@ public class ProductDescription {
 
     /**
      * Returns the ProductDescription's description.
+     *
      * @return the description
      */
     public String getDescription() {
@@ -106,6 +114,7 @@ public class ProductDescription {
 
     /**
      * Sets the ProductDescription's description.
+     *
      * @param description the new description
      */
     public void setDescription(String description) {

@@ -13,11 +13,9 @@ import be.thibaulthelsmoortel.helsmoortelUtil.util.economy.CurrencyFactory;
 import java.math.BigDecimal;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for converting currency values with Euro (EUR) as base currency.
+ *
+ * @author Thibault Helsmoortel
  */
 
 public class CurrencyConverter {
@@ -25,7 +23,8 @@ public class CurrencyConverter {
     /**
      * Principal method of the conversion class.
      * Converts and returns a BigDecimal value based on source and target currencies.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @param target the ISO code of the target currency
      * @return the converted value from the source currency to the target currency
@@ -41,12 +40,13 @@ public class CurrencyConverter {
     /**
      * Overload conversion method to support custom currencies.
      * Converts and returns a BigDecimal value based on source and target currencies.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @param target the target currency
      * @return the converted value from the source currency to the target currency
      */
-    public static BigDecimal convert(BigDecimal value, Currency source, Currency target){
+    public static BigDecimal convert(BigDecimal value, Currency source, Currency target) {
         return value.divide(BigDecimal.valueOf(source.getRate()), 10, BigDecimal.ROUND_CEILING)
                 .multiply(BigDecimal.valueOf(target.getRate()));
     }
@@ -55,17 +55,19 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to AUD
      */
-    public static BigDecimal toAUD(BigDecimal value, CurrencyCode source){
+    public static BigDecimal toAUD(BigDecimal value, CurrencyCode source) {
         return convert(value, source, CurrencyCode.AUD);
     }
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to AUD
      */
@@ -75,7 +77,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to BGN
      */
@@ -85,7 +88,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to BGN
      */
@@ -95,7 +99,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to BRL
      */
@@ -105,7 +110,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to BRL
      */
@@ -115,7 +121,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to CAD
      */
@@ -125,7 +132,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to CAD
      */
@@ -135,7 +143,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to CHF
      */
@@ -145,7 +154,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to CHF
      */
@@ -155,7 +165,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to CNY
      */
@@ -165,7 +176,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to CNY
      */
@@ -175,7 +187,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to CZK
      */
@@ -185,16 +198,19 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to CZK
      */
     public static BigDecimal toCZK(BigDecimal value, Currency source) {
         return convert(value, source, CurrencyFactory.getCurrencyByCode(CurrencyCode.CZK));
     }
+
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to DKK
      */
@@ -204,7 +220,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to DKK
      */
@@ -214,7 +231,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to EUR
      */
@@ -224,7 +242,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to EUR
      */
@@ -234,7 +253,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to GBP
      */
@@ -244,7 +264,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to GBP
      */
@@ -254,7 +275,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to HKD
      */
@@ -264,7 +286,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to HKD
      */
@@ -274,7 +297,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to HRK
      */
@@ -284,7 +308,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to HRK
      */
@@ -294,7 +319,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to HUF
      */
@@ -304,7 +330,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to HUF
      */
@@ -314,7 +341,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to IDR
      */
@@ -324,7 +352,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to IDR
      */
@@ -334,7 +363,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to ILS
      */
@@ -344,7 +374,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to ILS
      */
@@ -354,7 +385,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to INR
      */
@@ -364,7 +396,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to INR
      */
@@ -374,7 +407,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to JPY
      */
@@ -384,7 +418,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to JPY
      */
@@ -394,7 +429,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to KRW
      */
@@ -404,7 +440,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to KRW
      */
@@ -414,7 +451,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to MXN
      */
@@ -424,7 +462,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to MXN
      */
@@ -434,7 +473,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to MYR
      */
@@ -444,7 +484,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to MYR
      */
@@ -454,7 +495,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to NOK
      */
@@ -464,7 +506,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to NOK
      */
@@ -474,7 +517,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to NZD
      */
@@ -484,7 +528,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to NZD
      */
@@ -494,7 +539,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to PHP
      */
@@ -504,7 +550,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to PHP
      */
@@ -514,7 +561,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to PLN
      */
@@ -524,7 +572,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to PLN
      */
@@ -534,7 +583,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to RON
      */
@@ -544,7 +594,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to RON
      */
@@ -554,7 +605,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to RUB
      */
@@ -564,7 +616,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to RUB
      */
@@ -574,7 +627,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to SEK
      */
@@ -584,7 +638,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to SEK
      */
@@ -594,7 +649,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to SGD
      */
@@ -604,7 +660,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to SGD
      */
@@ -614,7 +671,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to THB
      */
@@ -624,7 +682,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to THB
      */
@@ -634,7 +693,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to TRY
      */
@@ -644,7 +704,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to TRY
      */
@@ -654,7 +715,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to USD
      */
@@ -664,7 +726,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to USD
      */
@@ -674,7 +737,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the ISO code of the source currency
      * @return the converted value from the source currency to ZAR
      */
@@ -684,7 +748,8 @@ public class CurrencyConverter {
 
     /**
      * Converts and returns a BigDecimal value based on source currency.
-     * @param value the value of the source currency
+     *
+     * @param value  the value of the source currency
      * @param source the source currency
      * @return the converted value from the source currency to ZAR
      */

@@ -8,11 +8,9 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.economy;
 import java.util.Date;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class representing a register.
+ *
+ * @author Thibault Helsmoortel
  */
 public class Register {
     private int registerID;
@@ -22,8 +20,9 @@ public class Register {
 
     /**
      * Constructor setting the id and ProductCatalog.
+     *
      * @param registerID the register's id
-     * @param catalog the ProductCatalog the register will use
+     * @param catalog    the ProductCatalog the register will use
      */
     public Register(int registerID, ProductCatalog catalog) {
         this.registerID = registerID;
@@ -32,6 +31,7 @@ public class Register {
 
     /**
      * Logs a cashier into the register, if possible.
+     *
      * @param cashier the cashier to login
      */
     public void logIn(Cashier cashier) {
@@ -48,24 +48,26 @@ public class Register {
 
     /**
      * Returns true if a cashier is logged in, false if otherwise.
+     *
      * @return true if a cashier is logged in, false if otherwise
      */
     public boolean isLoggedIn() {
-        if (cashier != null) return true;
-        else return false;
+        return cashier != null;
     }
 
     /**
      * Creates a new sale (with the current date).
+     *
      * @param saleID the id for the new sale
      */
     public void makeNewSale(int saleID) {
-       if (isLoggedIn()) this.currentSale = new Sale(saleID);
+        if (isLoggedIn()) this.currentSale = new Sale(saleID);
     }
 
     /**
      * Creates a new sale.
-     * @param saleID the id for the new sale
+     *
+     * @param saleID       the id for the new sale
      * @param creationDate the date of creation
      */
     public void makeNewSale(int saleID, Date creationDate) {
@@ -74,7 +76,8 @@ public class Register {
 
     /**
      * Adds an amount of a SalesLineItem to the sale.
-     * @param item the SalesLineItem to add
+     *
+     * @param item     the SalesLineItem to add
      * @param quantity the amount of items to add
      */
     public void enterItem(SalesLineItem item, int quantity) {
@@ -89,7 +92,8 @@ public class Register {
 
     /**
      * Adds an amount of ProductDescription to the sale.
-     * @param item the ProductDescription to add
+     *
+     * @param item     the ProductDescription to add
      * @param quantity the amount of items to add
      */
     public void enterItem(ProductDescription item, int quantity) {
@@ -104,7 +108,8 @@ public class Register {
 
     /**
      * Adds an amount of items based on id.
-     * @param itemID the item's id of the item to add
+     *
+     * @param itemID   the item's id of the item to add
      * @param quantity the amount of items to add
      */
     public void enterItem(int itemID, int quantity) {
@@ -119,7 +124,8 @@ public class Register {
 
     /**
      * Removes an amount of items from the sale.
-     * @param item the SalesLineItem to remove
+     *
+     * @param item     the SalesLineItem to remove
      * @param quantity the amount of items to remove
      */
     public void removeItem(SalesLineItem item, int quantity) {
@@ -134,7 +140,8 @@ public class Register {
 
     /**
      * Removes an amount of items from the sale.
-     * @param item the ProductDescription to remove
+     *
+     * @param item     the ProductDescription to remove
      * @param quantity the amount of items to remove
      */
     public void removeItem(ProductDescription item, int quantity) {
@@ -149,7 +156,8 @@ public class Register {
 
     /**
      * Removes an amount of items from the sale.
-     * @param itemID the item's id of the item to remove
+     *
+     * @param itemID   the item's id of the item to remove
      * @param quantity the amount of items to remove
      */
     public void removeItem(int itemID, int quantity) {
@@ -164,6 +172,7 @@ public class Register {
 
     /**
      * Adds a Payment to the sale.
+     *
      * @param payment the payment to add
      */
     public void makePayment(Payment payment) {
@@ -178,6 +187,7 @@ public class Register {
 
     /**
      * Completes and returns the Sale if successful.
+     *
      * @return the sale if completed
      */
     public Sale endSale() {
@@ -191,6 +201,7 @@ public class Register {
 
     /**
      * Returns the register's id
+     *
      * @return the register's id
      */
     public int getRegisterID() {
@@ -199,6 +210,7 @@ public class Register {
 
     /**
      * Returns the Productcatalog.
+     *
      * @return the ProductCatalog
      */
     public ProductCatalog getCatalog() {
@@ -208,6 +220,7 @@ public class Register {
 
     /**
      * Sets the ProductCatalog.
+     *
      * @param catalog the ProductCatalog to set
      */
     public void setCatalog(ProductCatalog catalog) {
@@ -216,6 +229,7 @@ public class Register {
 
     /**
      * Returns the current sale.
+     *
      * @return the current sale
      */
     public Sale getCurrentSale() {

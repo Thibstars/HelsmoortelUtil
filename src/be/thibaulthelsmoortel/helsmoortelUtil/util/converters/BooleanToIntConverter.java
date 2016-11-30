@@ -6,16 +6,15 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.converters;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for converting boolean values to int ones.
+ *
+ * @author Thibault Helsmoortel
  */
 public class BooleanToIntConverter {
 
     /**
      * Converts a boolean value into an int one.
+     *
      * @param bool the boolean value to convert
      * @return the int value of the boolean
      */

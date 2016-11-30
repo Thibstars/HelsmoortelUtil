@@ -10,11 +10,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for representation of sales.
+ *
+ * @author Thibault Helsmoortel
  */
 //TODO add discount support
 public class Sale {
@@ -27,6 +25,7 @@ public class Sale {
 
     /**
      * Constructor.
+     *
      * @param saleID sales identifier
      */
     public Sale(int saleID) {
@@ -38,7 +37,8 @@ public class Sale {
 
     /**
      * Constructor.
-     * @param saleID sales identifier
+     *
+     * @param saleID       sales identifier
      * @param creationDate sales creation date
      */
     public Sale(int saleID, Date creationDate) {
@@ -50,7 +50,8 @@ public class Sale {
 
     /**
      * Adds an item to the sale, if there is an active SalesLine for the item.
-     * @param itemID item identifier
+     *
+     * @param itemID   item identifier
      * @param quantity amount of items to add
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -69,7 +70,8 @@ public class Sale {
 
     /**
      * Adds an item to the sale.
-     * @param item SalesLine item to add
+     *
+     * @param item     SalesLine item to add
      * @param quantity amount of items to add
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -87,7 +89,8 @@ public class Sale {
 
     /**
      * Removes an item from the sale, if there is an active SalesLine for the item.
-     * @param itemID item identifier
+     *
+     * @param itemID   item identifier
      * @param quantity amount of items to remove
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -107,7 +110,8 @@ public class Sale {
 
     /**
      * Removes an item from the sale, if there is an active SalesLine for the item.
-     * @param item item to remove
+     *
+     * @param item     item to remove
      * @param quantity amount of items to remove
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -118,6 +122,7 @@ public class Sale {
 
     /**
      * Adds a SalesLine to the sale if it doesn't yet exists.
+     *
      * @param line SalesLine to add
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -131,6 +136,7 @@ public class Sale {
 
     /**
      * Removes a SalesLine from the sale if it already exists.
+     *
      * @param line SalesLine to remove
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -144,6 +150,7 @@ public class Sale {
 
     /**
      * Returns the total amount of SalesLines in the sale.
+     *
      * @return the total amount of SalesLines in the sale
      */
     public int getLinesCount() {
@@ -152,6 +159,7 @@ public class Sale {
 
     /**
      * Returns the total amount of items in the sale.
+     *
      * @return the total amount of items in the sale
      */
     public int getItemCount() {
@@ -164,6 +172,7 @@ public class Sale {
 
     /**
      * Returns the total sum of the sale, before VAT.
+     *
      * @return the total sum of the sale, before VAT
      */
     public double getSubTotal() {
@@ -174,6 +183,7 @@ public class Sale {
 
     /**
      * Returns to total amount of VAT of the sale.
+     *
      * @return the total amount of VAT of the sale
      */
     public double getTotalVAT() {
@@ -184,6 +194,7 @@ public class Sale {
 
     /**
      * Returns the total sum of the sale, after VAT
+     *
      * @return the total sum of the sale, after VAT
      */
     public double getTotal() {
@@ -192,6 +203,7 @@ public class Sale {
 
     /**
      * Returns the sale's identifier.
+     *
      * @return the sale's identifier
      */
     public int getSaleID() {
@@ -200,6 +212,7 @@ public class Sale {
 
     /**
      * Sets the sale's identifier.
+     *
      * @param saleID the new sale's identifier
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -210,6 +223,7 @@ public class Sale {
 
     /**
      * Returns the sale's creation date.
+     *
      * @return the sale's creation date
      */
     public Date getCreationDate() {
@@ -218,6 +232,7 @@ public class Sale {
 
     /**
      * Returns true if the sale is complete.
+     *
      * @return true if the sale is complete
      */
     public boolean isComplete() {
@@ -226,6 +241,7 @@ public class Sale {
 
     /**
      * Completes the sale, if possible.
+     *
      * @return true if sale completed, false if otherwise
      */
     public boolean complete() {
@@ -238,6 +254,7 @@ public class Sale {
 
     /**
      * Make a payment for the sale.
+     *
      * @param payment the payment to make
      * @throws SaleAlreadyCompletedException exception thrown when the sale was already completed
      */
@@ -251,6 +268,7 @@ public class Sale {
 
     /**
      * Returns the sale's payment.
+     *
      * @return the sale's payment
      */
     public Payment getPayment() {
@@ -259,14 +277,16 @@ public class Sale {
 
     /**
      * Returns the list of SalesLines.
+     *
      * @return the list of SalesLines
      */
     public List<SalesLine> getSalesLines() {
-    return new ArrayList<>(salesLines);
+        return new ArrayList<>(salesLines);
     }
 
     /**
      * Returns a list of all SalesLineItems.
+     *
      * @return a list of all SalesLineItems
      */
     public List<SalesLineItem> getSalesLineItems() {
@@ -279,6 +299,7 @@ public class Sale {
 
     /**
      * Returns a String representation of the sale.
+     *
      * @return a String representation of the sale
      */
     @Override

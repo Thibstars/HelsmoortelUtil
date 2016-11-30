@@ -8,25 +8,25 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.converters;
 import java.awt.*;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for converting colors.
+ *
+ * @author Thibault Helsmoortel
  */
 public class ColorConverter {
 
     /**
      * Converts a color and returns an hexadecimal rgb string.
+     *
      * @param color the color to convert
      * @return the hexadecimal rgb string corresponding to the color
      */
     public static String toHex(Color color) {
-        return  "#"+Integer.toHexString(color.getRGB()).substring(2);
+        return "#" + Integer.toHexString(color.getRGB()).substring(2);
     }
 
     /**
      * Converts an argb color and returns an integer array.
+     *
      * @param hex the hexadecimal value of the color to convert
      * @return integer array of the argb color
      */
@@ -49,6 +49,7 @@ public class ColorConverter {
 
     /**
      * Converts a hexadecimal color value to a color.
+     *
      * @param hex the hexadecimal value of the color to obtain
      * @return the converted color
      */

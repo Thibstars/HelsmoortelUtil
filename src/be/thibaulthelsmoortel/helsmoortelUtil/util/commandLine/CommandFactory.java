@@ -11,11 +11,9 @@ import java.util.Set;
 import java.util.WeakHashMap;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Singleton factory class regulating the use of commands of the Command class.
+ *
+ * @author Thibault Helsmoortel
  */
 public final class CommandFactory {
     private static CommandFactory classInstance = new CommandFactory();
@@ -33,8 +31,9 @@ public final class CommandFactory {
 
     /**
      * Creates and returns a Command object.
+     *
      * @param command the name of the command
-     * @param method the method of the command
+     * @param method  the method of the command
      * @return the newly created command
      */
     public static Command create(String command, Method method) {
@@ -45,6 +44,7 @@ public final class CommandFactory {
 
     /**
      * Searches for a command from the commandSet and returns it if a command was found.
+     *
      * @param command the name of the command to search for
      * @return the matching command, if any
      * @throws IllegalArgumentException command was not found
@@ -58,6 +58,7 @@ public final class CommandFactory {
 
     /**
      * Fires the method linked to the command.
+     *
      * @param command the command to execute
      * @return the result of the invoked method
      */
@@ -67,8 +68,9 @@ public final class CommandFactory {
 
     /**
      * Fires the method linked to the command.
+     *
      * @param command the command to execute
-     * @param args argument(s) to be passed to the method
+     * @param args    argument(s) to be passed to the method
      * @return the result of the invoked method
      */
     private static Object execute(Command command, Object[] args) {
@@ -78,6 +80,7 @@ public final class CommandFactory {
 
     /**
      * Fires the method linked to the command.
+     *
      * @param command the name of the command to execute
      * @return the result of the invoked method
      * @throws IllegalArgumentException command was not found
@@ -89,8 +92,9 @@ public final class CommandFactory {
 
     /**
      * Fires the method linked to the command.
+     *
      * @param command the name of the command to execute
-     * @param args argument(s) to be passed to the method
+     * @param args    argument(s) to be passed to the method
      * @return the result of the invoked method
      * @throws IllegalArgumentException command was not found
      */
@@ -101,6 +105,7 @@ public final class CommandFactory {
 
     /**
      * Returns an instance of CommandFactory
+     *
      * @return an instance of the CommandFactory
      */
     public static synchronized CommandFactory getInstance() {
@@ -109,6 +114,7 @@ public final class CommandFactory {
 
     /**
      * Blocks the cloning of the CommandFactory
+     *
      * @return nothing
      * @throws CloneNotSupportedException cloning not supported
      */
