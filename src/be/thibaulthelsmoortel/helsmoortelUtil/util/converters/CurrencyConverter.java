@@ -5,12 +5,12 @@
 
 package be.thibaulthelsmoortel.helsmoortelUtil.util.converters;
 
-
-import be.thibaulthelsmoortel.helsmoortelUtil.util.economy.Currency;
-import be.thibaulthelsmoortel.helsmoortelUtil.util.economy.Currency.CurrencyCode;
-import be.thibaulthelsmoortel.helsmoortelUtil.util.economy.CurrencyFactory;
+import be.thibaulthelsmoortel.helsmoortelUtil.util.converters.helpers.Currency;
+import be.thibaulthelsmoortel.helsmoortelUtil.util.converters.helpers.CurrencyFactory;
 
 import java.math.BigDecimal;
+
+import static be.thibaulthelsmoortel.helsmoortelUtil.util.converters.helpers.Currency.CurrencyCode;
 
 /**
  * Class for converting currency values with Euro (EUR) as base currency.
@@ -208,7 +208,7 @@ public class CurrencyConverter {
     }
 
     /**
-     * Converts and returns a BigDecimal value based on source currency.
+     * Converts and returns a BigDecimal value based on source
      *
      * @param value  the value of the source currency
      * @param source the ISO code of the source currency
