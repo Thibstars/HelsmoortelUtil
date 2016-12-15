@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotNull;
  *
  * @author Thibault Helsmoortel
  */
-
 public class LanguageManagerTests {
 
     private static final Logger LOGGER = Logger.getLogger(LanguageManagerTests.class);

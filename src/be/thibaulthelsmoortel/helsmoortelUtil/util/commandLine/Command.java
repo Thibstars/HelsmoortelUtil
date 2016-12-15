@@ -20,7 +20,9 @@ public class Command {
     //The method to be executed
     private Method method;
     //Argument(s) to pass to the method
-    private String[] args;
+    private Object[] args;
+
+    private boolean executed;
 
     /**
      * Package local constructor specifying command and method.
@@ -31,6 +33,7 @@ public class Command {
     protected Command(String command, Method method) {
         this.command = command;
         this.method = method;
+        this.executed = false;
     }
 
     /**
@@ -40,10 +43,11 @@ public class Command {
      * @param method  the method to be executed
      * @param args    the optional args
      */
-    protected Command(String command, Method method, String... args) {
+    protected Command(String command, Method method, Object... args) {
         this.command = command;
         this.method = method;
         this.args = args;
+        this.executed = false;
     }
 
     /**
@@ -60,7 +64,7 @@ public class Command {
      *
      * @param args argument(s) to be passed to the executed method
      */
-    public void setArgs(String[] args) {
+    public void setArgs(Object[] args) {
         this.args = args;
     }
 
@@ -74,10 +78,20 @@ public class Command {
         try {
             if (args != null) result = method.invoke(null, args);
             else result = method.invoke(null);
+            executed = true;
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return result;
+    }
+
+    /**
+     * Returns true when the command was executed, false if otherwise.
+     *
+     * @return true when the command was executed, false if otherwise
+     */
+    public boolean isExecuted() {
+        return executed;
     }
 
     /*
