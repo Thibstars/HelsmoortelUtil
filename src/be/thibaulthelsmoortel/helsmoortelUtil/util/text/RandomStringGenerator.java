@@ -13,6 +13,7 @@ import java.util.Random;
  * @author Thibault Helsmoortel
  */
 public final class RandomStringGenerator {
+
     public static final String NUM = "0123456789";
     private static final String AB_FULL = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final String AB_NONUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

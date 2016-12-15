@@ -25,6 +25,11 @@ public class CommandTests {
 
     private static final Logger LOGGER = Logger.getLogger(CommandTests.class);
 
+    /**
+     * Tests whether commands are properly executed.
+     *
+     * @throws NoSuchMethodException when the used method is not found.
+     */
     @Test
     public void shouldExecuteCommand() throws NoSuchMethodException {
         Method methodToUse = Math.class.getMethod("random");
