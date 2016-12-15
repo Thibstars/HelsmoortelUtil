@@ -6,29 +6,30 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.validation;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Interface supporting validation.
+ *
+ * @author Thibault Helsmoortel
  */
 public interface Validateable {
 
     /**
      * Validates and returns an Object.
+     *
      * @return an Object
      */
-     Object validate();
+    Object validate();
 
     /**
      * Validates and returns an Object, takes an error message.
+     *
      * @param errorMessage the error message
      * @return an Object
      */
-     Object validate(String errorMessage);
+    Object validate(String errorMessage);
 
     /**
      * Returns true when valid.
+     *
      * @return true when valid
      */
     boolean tryValidate();

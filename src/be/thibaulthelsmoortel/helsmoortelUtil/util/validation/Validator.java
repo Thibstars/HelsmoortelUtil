@@ -6,11 +6,9 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.validation;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for validation purposes.
+ *
+ * @author Thibault Helsmoortel
  */
 public class Validator {
     private static final String ERROR_PREFIX = "[Validator} ";
@@ -19,6 +17,7 @@ public class Validator {
 
     /**
      * Validates a ValidationObject and returns an Object when valid.
+     *
      * @param validationObject the ValidationObject to validate
      * @return Object when valid
      */
@@ -28,6 +27,7 @@ public class Validator {
 
     /**
      * Validates a Validateable and returns an Object when valid.
+     *
      * @param validateable the Validateable to validate
      * @return Object when valid
      */
@@ -37,6 +37,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a ValidationObject.
+     *
      * @param validationObject the ValidationObject to try to validate
      * @return true when valid
      */
@@ -46,6 +47,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a Validateable.
+     *
      * @param validateable the Validateable to try to validate.
      * @return true when valid
      */
@@ -57,6 +59,7 @@ public class Validator {
 
     /**
      * Validates and returns an Object when it's null.
+     *
      * @param o the Object to validate
      * @return the Object when valid
      */
@@ -66,7 +69,8 @@ public class Validator {
 
     /**
      * Validates and returns an Object when it's null.
-     * @param o the Object to validate
+     *
+     * @param o            the Object to validate
      * @param errorMessage the errorMessage for the IllegalArgumentException when invalid
      * @return the Object when valid
      */
@@ -77,6 +81,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an Object.
+     *
      * @param o the Object to try to validate
      * @return true when valid
      */
@@ -86,6 +91,7 @@ public class Validator {
 
     /**
      * Validates and returns an Object when it's not null.
+     *
      * @param o the Object to validate
      * @return the Object when valid
      */
@@ -95,17 +101,19 @@ public class Validator {
 
     /**
      * Validates and returns an Object when it's not null.
-     * @param o the Object to validate
+     *
+     * @param o            the Object to validate
      * @param errorMessage the errorMessage for the IllegalArgumentException when invalid
      * @return the Object when valid
      */
     public static Object validateNotNull(Object o, String errorMessage) {
-       if (tryValidateNotNull(o)) return o;
+        if (tryValidateNotNull(o)) return o;
         else throw new IllegalArgumentException(errorMessage);
     }
 
     /**
      * Returns true on a successful validation of an Object.
+     *
      * @param o the Object to try to validate
      * @return true when valid
      */
@@ -115,7 +123,8 @@ public class Validator {
 
     /**
      * Validates and returns a String when it's valid.
-     * @param string the String to validate
+     *
+     * @param string    the String to validate
      * @param minLength the minimum length for the string
      * @return the string when valid
      */
@@ -126,8 +135,9 @@ public class Validator {
 
     /**
      * Validates and returns a String when it's valid.
-     * @param string the String to validate
-     * @param minLength the minimum length for the string
+     *
+     * @param string       the String to validate
+     * @param minLength    the minimum length for the string
      * @param errorMessage the error message
      * @return the string when valid
      */
@@ -138,7 +148,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a String.
-     * @param string the String to try to validate
+     *
+     * @param string    the String to try to validate
      * @param minLength the minimum length for the string
      * @return true when valid
      */
@@ -148,7 +159,8 @@ public class Validator {
 
     /**
      * Validates and returns a String when its valid.
-     * @param string the String to validate
+     *
+     * @param string    the String to validate
      * @param maxLength the maximum length for the string
      * @return the string when valid
      */
@@ -159,8 +171,9 @@ public class Validator {
 
     /**
      * Validates and returns a String when it's valid.
-     * @param string the String to validate
-     * @param maxLength the maximum length for the string
+     *
+     * @param string       the String to validate
+     * @param maxLength    the maximum length for the string
      * @param errorMessage the error message
      * @return the string when valid
      */
@@ -171,7 +184,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a String.
-     * @param string the String to try to validate
+     *
+     * @param string    the String to try to validate
      * @param maxLength the maximum length for the string
      * @return true when valid
      */
@@ -181,7 +195,8 @@ public class Validator {
 
     /**
      * Validates and returns a String when it's valid.
-     * @param string the String to validate
+     *
+     * @param string    the String to validate
      * @param minLength the minimum length for the string
      * @param maxLength the maximum length for the string
      * @return the string when valid
@@ -193,9 +208,10 @@ public class Validator {
 
     /**
      * Validates and returns a String when it's valid.
-     * @param string the String to validate
-     * @param minLength the minimum length for the string
-     * @param maxLength the maximum length for the string
+     *
+     * @param string       the String to validate
+     * @param minLength    the minimum length for the string
+     * @param maxLength    the maximum length for the string
      * @param errorMessage the error message
      * @return the string when valid
      */
@@ -206,7 +222,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a String.
-     * @param string the String to try to validate
+     *
+     * @param string    the String to try to validate
      * @param minLength the minimum length for the string
      * @param maxLength the maximum length for the string
      * @return true when valid
@@ -217,6 +234,7 @@ public class Validator {
 
     /**
      * Validates an returns a byte when it's valid.
+     *
      * @param b the byte to validate
      * @return the byte when valid
      */
@@ -226,7 +244,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b            the byte to validate
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -237,6 +256,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
+     *
      * @param b the byte to try to validate
      * @return true when valid
      */
@@ -246,16 +266,18 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
+     *
      * @param s the short to validate
      * @return the short when valid
      */
     public static short validatePositive(short s) {
-       return validatePositive(s, ERROR_PREFIX + s + " is not positive.");
+        return validatePositive(s, ERROR_PREFIX + s + " is not positive.");
     }
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s            the short to validate
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -266,6 +288,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
+     *
      * @param s the short to try to validate
      * @return true when valid
      */
@@ -275,6 +298,7 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
+     *
      * @param i the integer to validate
      * @return the integer when valid
      */
@@ -284,7 +308,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i            the integer to validate
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -295,6 +320,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
+     *
      * @param i the integer to try to validate
      * @return true when valid
      */
@@ -304,6 +330,7 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
+     *
      * @param l the long to validate
      * @return the long when valid
      */
@@ -313,7 +340,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l            the long to validate
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -324,6 +352,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
+     *
      * @param l the long to try to validate
      * @return true when valid
      */
@@ -333,6 +362,7 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
+     *
      * @param f the float to validate
      * @return the float when valid
      */
@@ -342,7 +372,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f            the float to validate
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -353,6 +384,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
+     *
      * @param f the float to try to validate
      * @return true when valid
      */
@@ -362,6 +394,7 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
+     *
      * @param d the double to validate
      * @return the double when valid
      */
@@ -371,7 +404,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d            the double to validate
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -382,6 +416,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
+     *
      * @param d the double to try to validate
      * @return true when valid
      */
@@ -391,6 +426,7 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
+     *
      * @param b the byte to validate
      * @return the byte when valid
      */
@@ -400,7 +436,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b            the byte to validate
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -411,6 +448,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
+     *
      * @param b the byte to try to validate
      * @return true when valid
      */
@@ -420,6 +458,7 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
+     *
      * @param s the short to validate
      * @return the short when valid
      */
@@ -429,7 +468,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s            the short to validate
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -440,6 +480,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
+     *
      * @param s the short to try to validate
      * @return true when valid
      */
@@ -449,6 +490,7 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
+     *
      * @param i the integer to validate
      * @return the integer when valid
      */
@@ -458,7 +500,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i            the integer to validate
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -469,6 +512,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
+     *
      * @param i the integer to try to validate
      * @return true when valid
      */
@@ -478,6 +522,7 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
+     *
      * @param l the long to validate
      * @return the long when valid
      */
@@ -487,7 +532,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l            the long to validate
      * @param errorMessage the error message
      * @return te long when valid
      */
@@ -498,6 +544,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
+     *
      * @param l the long to try to validate
      * @return true when valid
      */
@@ -507,6 +554,7 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
+     *
      * @param f the float to validate
      * @return the float when valid
      */
@@ -516,7 +564,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f            the float to validate
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -527,6 +576,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
+     *
      * @param f the float to try to validate
      * @return true when valid
      */
@@ -536,6 +586,7 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
+     *
      * @param d the double to validate
      * @return the double when valid
      */
@@ -545,7 +596,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d            the double to validate
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -556,6 +608,7 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
+     *
      * @param d the double to try to validate
      * @return true when valid
      */
@@ -565,7 +618,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s   the short to validate
      * @param val the value to validate with
      * @return the short when valid
      */
@@ -577,8 +631,9 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param val the value to validate with
+     *
+     * @param s            the short to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -589,7 +644,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to try to validate
+     *
+     * @param s   the short to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -599,7 +655,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate.
+     *
+     * @param b   the byte to validate.
      * @param val the value to validate with
      * @return the byte when valid
      */
@@ -610,8 +667,9 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param val the value to validate with
+     *
+     * @param b            the byte to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -622,7 +680,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b   the byte to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -632,7 +691,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i   the integer to validate
      * @param val the value to validate with
      * @return the integer when valid
      */
@@ -643,8 +703,9 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
-     * @param val the value to validate with
+     *
+     * @param i            the integer to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -655,7 +716,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
-     * @param i the integer to validate
+     *
+     * @param i   the integer to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -665,7 +727,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l   the long to validate
      * @param val the value to validate with
      * @return the long when valid
      */
@@ -676,8 +739,9 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
-     * @param val the value to validate with
+     *
+     * @param l            the long to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -688,7 +752,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l   the long to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -698,7 +763,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f   the float to validate
      * @param val the value to validate with
      * @return the float when valid
      */
@@ -709,8 +775,9 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param val the value to validate with
+     *
+     * @param f            the float to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -721,7 +788,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f   the float to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -731,7 +799,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d   the double to validate
      * @param val the value to validate with
      * @return the double when valid
      */
@@ -742,8 +811,9 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param val the value to validate with
+     *
+     * @param d            the double to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -754,7 +824,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d   the double to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -764,7 +835,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s   the short to validate
      * @param val the value to validate with
      * @return the short when valid
      */
@@ -775,8 +847,9 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param val the value to validate with
+     *
+     * @param s            the short to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -787,7 +860,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to try to validate
+     *
+     * @param s   the short to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -797,7 +871,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b   the byte to validate
      * @param val the value to validate with
      * @return the byte when valid
      */
@@ -808,8 +883,9 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param val the value to validate with
+     *
+     * @param b            the byte to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -820,7 +896,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b   the byte to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -830,7 +907,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i   the integer to validate
      * @param val the value to validate with
      * @return the integer when valid
      */
@@ -841,8 +919,9 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
-     * @param val the value to validate with
+     *
+     * @param i            the integer to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -853,7 +932,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
-     * @param i the integer to try to validate
+     *
+     * @param i   the integer to try to validate
      * @param val teh value to validate with
      * @return true when valid
      */
@@ -863,7 +943,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l   the long to validate
      * @param val the value to validate with
      * @return the long when valid
      */
@@ -874,8 +955,9 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
-     * @param val the value to validate with
+     *
+     * @param l            the long to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -886,7 +968,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l   the long to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -896,7 +979,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f   the float to validate
      * @param val the value to validate with
      * @return the float when valid
      */
@@ -907,8 +991,9 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param val the value to validate with
+     *
+     * @param f            the float to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -919,7 +1004,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f   the float to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -929,7 +1015,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d   the double to validate
      * @param val the value to validate with
      * @return the double when valid
      */
@@ -940,8 +1027,9 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param val the value to validate with
+     *
+     * @param d            the double to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -952,7 +1040,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d   the double to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -962,7 +1051,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s   the short to validate
      * @param val the value to validate with
      * @return the short when valid
      */
@@ -973,8 +1063,9 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param val the value to validate with
+     *
+     * @param s            the short to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -985,7 +1076,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to try to validate
+     *
+     * @param s   the short to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -995,7 +1087,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b   the byte to validate
      * @param val the value to validate with
      * @return the byte when valid
      */
@@ -1006,8 +1099,9 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param val the value to validate with
+     *
+     * @param b            the byte to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -1018,7 +1112,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b   the byte to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1028,7 +1123,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i   the integer to validate
      * @param val the value to validate with
      * @return the integer when valid
      */
@@ -1039,8 +1135,9 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
-     * @param val the value to validate with
+     *
+     * @param i            the integer to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -1051,7 +1148,8 @@ public class Validator {
 
     /**
      * Returns true on a successfull validation of an integer.
-     * @param i the integer to try to validate
+     *
+     * @param i   the integer to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1061,7 +1159,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l   the long to validate
      * @param val the value to validate with
      * @return the long when valid
      */
@@ -1072,8 +1171,9 @@ public class Validator {
 
     /**
      * Validates an returns a long when it's valid.
-     * @param l the long to validate
-     * @param val the value to validate with
+     *
+     * @param l            the long to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -1084,7 +1184,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l   the long to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1094,7 +1195,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f   the float to validate
      * @param val the value to validate with
      * @return the float when valid
      */
@@ -1105,8 +1207,9 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param val the value to validate with
+     *
+     * @param f            the float to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -1117,7 +1220,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f   the float to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1127,7 +1231,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d   the double to validate
      * @param val the value to validate with
      * @return the double when valid
      */
@@ -1138,8 +1243,9 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param val the value to validate with
+     *
+     * @param d            the double to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -1150,7 +1256,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d   the double to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1160,7 +1267,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s   the short to validate
      * @param val the value to validate with
      * @return the short when valid
      */
@@ -1171,8 +1279,9 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param val the value to validate with
+     *
+     * @param s            the short to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -1183,7 +1292,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to try to validate
+     *
+     * @param s   the short to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1193,7 +1303,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b   the byte to validate
      * @param val the value to validate with
      * @return the byte when valid
      */
@@ -1204,8 +1315,9 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param val the value to validate with
+     *
+     * @param b            the byte to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -1216,7 +1328,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b   the byte to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1226,7 +1339,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i   the integer to validate
      * @param val the value to validate with
      * @return the integer when valid
      */
@@ -1237,8 +1351,9 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
-     * @param val the value to validate with
+     *
+     * @param i            the integer to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -1249,7 +1364,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
-     * @param i the integer to try to validate
+     *
+     * @param i   the integer to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1259,7 +1375,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l   the long to validate
      * @param val the value to validate with
      * @return the long when valid
      */
@@ -1270,8 +1387,9 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
-     * @param val the value to validate with
+     *
+     * @param l            the long to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -1282,7 +1400,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l   the long to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1292,7 +1411,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f   the float to validate
      * @param val the value to validate with
      * @return the float when valid
      */
@@ -1303,8 +1423,9 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param val the value to validate with
+     *
+     * @param f            the float to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -1315,7 +1436,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f   the float to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1325,7 +1447,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d   the double to validate
      * @param val the value to validate with
      * @return the double when valid
      */
@@ -1336,8 +1459,9 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param val the value to validate with
+     *
+     * @param d            the double to validate
+     * @param val          the value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -1348,7 +1472,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d   the double to try to validate
      * @param val the value to validate with
      * @return true when valid
      */
@@ -1358,7 +1483,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s  the short to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the short when valid
@@ -1370,9 +1496,10 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param s            the short to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -1383,7 +1510,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to validate
+     *
+     * @param s  the short to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1394,7 +1522,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b  the byte to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the byte when valid
@@ -1406,9 +1535,10 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param b            the byte to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
@@ -1419,7 +1549,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b  the byte to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1430,7 +1561,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i  the integer to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the integer when valid
@@ -1442,20 +1574,22 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param i            the integer to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
     public static int validateBetween(int i, int lo, int hi, String errorMessage) {
         if (tryValidateBetween(i, lo, hi)) return i;
-       else throw new IllegalArgumentException(errorMessage);
+        else throw new IllegalArgumentException(errorMessage);
     }
 
     /**
      * Returns true on a successful validation of an integer.
-     * @param i the integer to try to validate
+     *
+     * @param i  the integer to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1466,7 +1600,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l  the long to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the long when valid
@@ -1478,9 +1613,10 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param l            the long to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -1491,7 +1627,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l  the long to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1502,7 +1639,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f  the float to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the float when valid
@@ -1514,9 +1652,10 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param f            the float to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -1527,7 +1666,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f  the float to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1538,7 +1678,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d  the double to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the double when valid
@@ -1550,9 +1691,10 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param d            the double to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -1563,7 +1705,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d  the double to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1574,7 +1717,8 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
+     *
+     * @param s  the short to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the short when valid
@@ -1586,9 +1730,10 @@ public class Validator {
 
     /**
      * Validates and returns a short when it's valid.
-     * @param s the short to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param s            the short to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the short when valid
      */
@@ -1599,7 +1744,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a short.
-     * @param s the short to try to validate
+     *
+     * @param s  the short to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1610,7 +1756,8 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
+     *
+     * @param b  the byte to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the byte when valid
@@ -1622,20 +1769,22 @@ public class Validator {
 
     /**
      * Validates and returns a byte when it's valid.
-     * @param b the byte to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param b            the byte to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the byte when valid
      */
     public static byte validateBetweenIncluding(byte b, byte lo, byte hi, String errorMessage) {
-        if (tryValidateBetweenIncluding(b, lo, hi)) return  b;
+        if (tryValidateBetweenIncluding(b, lo, hi)) return b;
         else throw new IllegalArgumentException(errorMessage);
     }
 
     /**
      * Returns true on a successful validation of a byte.
-     * @param b the byte to try to validate
+     *
+     * @param b  the byte to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1646,7 +1795,8 @@ public class Validator {
 
     /**
      * Validates and returns an integer when it's valid.
-     * @param i the integer to validate
+     *
+     * @param i  the integer to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the integer when valid
@@ -1658,9 +1808,10 @@ public class Validator {
 
     /**
      * Validates and returns an integer whent it's valid.
-     * @param i the integer to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param i            the integer to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the integer when valid
      */
@@ -1671,7 +1822,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of an integer.
-     * @param i the integer to try to validate
+     *
+     * @param i  the integer to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when walid
@@ -1682,7 +1834,8 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
+     *
+     * @param l  the long to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the long when valid
@@ -1694,9 +1847,10 @@ public class Validator {
 
     /**
      * Validates and returns a long when it's valid.
-     * @param l the long to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param l            the long to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the long when valid
      */
@@ -1707,7 +1861,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a long.
-     * @param l the long to try to validate
+     *
+     * @param l  the long to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1718,7 +1873,8 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
+     *
+     * @param f  the float to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the float when valid
@@ -1730,9 +1886,10 @@ public class Validator {
 
     /**
      * Validates and returns a float when it's valid.
-     * @param f the float to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param f            the float to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the float when valid
      */
@@ -1743,7 +1900,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a float.
-     * @param f the float to try to validate
+     *
+     * @param f  the float to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid
@@ -1754,7 +1912,8 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
+     *
+     * @param d  the double to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return the double when valid
@@ -1766,9 +1925,10 @@ public class Validator {
 
     /**
      * Validates and returns a double when it's valid.
-     * @param d the double to validate
-     * @param lo the lower value to validate with
-     * @param hi the upper value to validate with
+     *
+     * @param d            the double to validate
+     * @param lo           the lower value to validate with
+     * @param hi           the upper value to validate with
      * @param errorMessage the error message
      * @return the double when valid
      */
@@ -1779,7 +1939,8 @@ public class Validator {
 
     /**
      * Returns true on a successful validation of a double.
-     * @param d the double to try to validate
+     *
+     * @param d  the double to try to validate
      * @param lo the lower value to validate with
      * @param hi the upper value to validate with
      * @return true when valid

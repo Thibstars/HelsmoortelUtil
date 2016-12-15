@@ -6,19 +6,19 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util.validation;
 
 /**
+ * Class for validating Strings on their lengths.
+ *
  * @author Thibault Helsmoortel
  */
-
-/**
- * Class for validating Strings on their lengths.
- */
 public class StringLengthValidator extends ValidationObject {
+
     private String string;
     private int minLength, maxLength;
 
     /**
      * Constructor initializing string, minLength and maxLength.
-     * @param string the String to use in the validator for validation
+     *
+     * @param string    the String to use in the validator for validation
      * @param minLength the minimum string length
      * @param maxLength the maximum string length
      */
@@ -30,6 +30,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Returns the minimum length of the string.
+     *
      * @return the minimum length of the string
      */
     public int getMinLength() {
@@ -38,6 +39,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Sets the minimum length of the string.
+     *
      * @param minLength the new minimum length of the string
      */
     public void setMinLength(int minLength) {
@@ -46,6 +48,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Returns the maximum length of the string.
+     *
      * @return the maximum length of the string
      */
     public int getMaxLength() {
@@ -54,6 +57,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Sets the maximum length of the string.
+     *
      * @param maxLength the new maximum length of the string
      */
     public void setMaxLength(int maxLength) {
@@ -62,6 +66,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Validates the string on minimum length, returns the string when valid.
+     *
      * @return the string when valid
      */
     public String validateMinLength() {
@@ -70,6 +75,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Validates the string on minimum length, returns the string when valid.
+     *
      * @param errorMessage the custom message to pass to the exception
      * @return the string when valid
      */
@@ -79,6 +85,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Returns true when the string is valid based on it's minimum length.
+     *
      * @return true when valid
      */
     public boolean tryValidateMinLength() {
@@ -87,6 +94,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Validates the string on maximum length, returns the string when valid.
+     *
      * @return the string when valid
      */
     public String validateMaxLength() {
@@ -95,6 +103,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Validates the string on maximum length, returns the string when valid.
+     *
      * @param errorMessage the custom message to pass to the exception
      * @return the string when valid
      */
@@ -104,6 +113,7 @@ public class StringLengthValidator extends ValidationObject {
 
     /**
      * Returns true when the string is valid based on it's maximum length.
+     *
      * @return true when valid
      */
     public boolean tryValidateMaxLength() {

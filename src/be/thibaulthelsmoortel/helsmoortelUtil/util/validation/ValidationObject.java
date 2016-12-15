@@ -8,11 +8,9 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.validation;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Abstract class representing an Object that supports validation.
+ *
+ * @author Thibault Helsmoortel
  */
 public abstract class ValidationObject implements Validateable {
 
