@@ -14,15 +14,16 @@ import java.lang.reflect.Method;
  * @author Thibault Helsmoortel
  */
 public class Command {
+
     //The actual name of the command
     private String command;
     //The method to be executed
     private Method method;
     //Argument(s) to pass to the method
-    private Object[] args;
+    private String[] args;
 
     /**
-     * Package local constructor
+     * Package local constructor specifying command and method.
      *
      * @param command the actual name of the command
      * @param method  the method to be executed
@@ -30,6 +31,19 @@ public class Command {
     protected Command(String command, Method method) {
         this.command = command;
         this.method = method;
+    }
+
+    /**
+     * Package local constructor specifying command, method and optional args.
+     *
+     * @param command the actual name of the command
+     * @param method  the method to be executed
+     * @param args    the optional args
+     */
+    protected Command(String command, Method method, String... args) {
+        this.command = command;
+        this.method = method;
+        this.args = args;
     }
 
     /**
@@ -46,7 +60,7 @@ public class Command {
      *
      * @param args argument(s) to be passed to the executed method
      */
-    public void setArgs(Object[] args) {
+    public void setArgs(String[] args) {
         this.args = args;
     }
 

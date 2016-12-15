@@ -43,6 +43,20 @@ public final class CommandFactory {
     }
 
     /**
+     * Creates and returns a Command object.
+     *
+     * @param command the name of the command
+     * @param method  the method of the command
+     * @param args    the optional args
+     * @return the newly created command
+     */
+    public static Command create(String command, Method method, String... args) {
+        Command c = new Command(command, method, args);
+        commandSet.add(c);
+        return c;
+    }
+
+    /**
      * Searches for a command from the commandSet and returns it if a command was found.
      *
      * @param command the name of the command to search for
@@ -73,7 +87,7 @@ public final class CommandFactory {
      * @param args    argument(s) to be passed to the method
      * @return the result of the invoked method
      */
-    private static Object execute(Command command, Object[] args) {
+    private static Object execute(Command command, String[] args) {
         command.setArgs(args);
         return command.execute();
     }
@@ -98,7 +112,7 @@ public final class CommandFactory {
      * @return the result of the invoked method
      * @throws IllegalArgumentException command was not found
      */
-    public static Object execute(String command, Object[] args) throws IllegalArgumentException {
+    public static Object execute(String command, String[] args) throws IllegalArgumentException {
         Command c = find(command);
         return execute(c, args);
     }
