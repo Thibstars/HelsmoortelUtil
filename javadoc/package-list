@@ -3,9 +3,10 @@ be.thibaulthelsmoortel.helsmoortelUtil.io
 be.thibaulthelsmoortel.helsmoortelUtil.util
 be.thibaulthelsmoortel.helsmoortelUtil.util.commandLine
 be.thibaulthelsmoortel.helsmoortelUtil.util.converters
-be.thibaulthelsmoortel.helsmoortelUtil.util.economy
+be.thibaulthelsmoortel.helsmoortelUtil.util.converters.helpers
 be.thibaulthelsmoortel.helsmoortelUtil.util.text
 be.thibaulthelsmoortel.helsmoortelUtil.util.validation
 be.thibaulthelsmoortel.helsmoortelUtil.view
-be.thibaulthelsmoortel.helsmoortelUtil.view.drawing
-be.thibaulthelsmoortel.helsmoortelUtil.view.interfaces
+globalization
+text
+util.commandLine
