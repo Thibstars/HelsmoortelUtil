@@ -3,7 +3,12 @@
  * Do not copy or (re)distribute without written permission.
  */
 
-package be.thibaulthelsmoortel.helsmoortelUtil.view.interfaces;
+/*
+ * This code has been entirely written by Thibault Helsmoortel.
+ * Do not copy or (re)distribute without written permission.
+ */
+
+package be.thibaulthelsmoortel.helsmoortelUtil.view;
 
 /**
  * Global interface for view classes.
