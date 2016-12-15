@@ -8,29 +8,29 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util.text;
 import java.util.Random;
 
 /**
+ * Class for generating random Strings.
+ *
  * @author Thibault Helsmoortel
  */
-
-/**
- * Class for generating random Strings.
- */
 public final class RandomStringGenerator {
+    public static final String NUM = "0123456789";
     private static final String AB_FULL = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final String AB_NONUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String NUM = "0123456789";
     private static Random rnd = new Random();
 
     /**
      * Returns a random alphanumeric String.
+     *
      * @param length the length of the String
      * @return the random alphanumeric String
      */
-    public static String randomAlphaNumericString(int length){
+    public static String randomAlphaNumericString(int length) {
         return getRandomString(length, AB_FULL).toString();
     }
 
     /**
      * Returns a random String (excluding numerical values).
+     *
      * @param length the length of the String
      * @return the random String
      */
@@ -40,6 +40,7 @@ public final class RandomStringGenerator {
 
     /**
      * Returns a random numeric String.
+     *
      * @param length the length of the String
      * @return the random String
      */
@@ -49,8 +50,9 @@ public final class RandomStringGenerator {
 
     /**
      * Returns a StringBuilder instance with a random value, based on length and base String.
+     *
      * @param length the length of the StringBuilder
-     * @param base the base String
+     * @param base   the base String
      * @return a random StringBuilder
      */
     private static StringBuilder getRandomString(int length, String base) {
