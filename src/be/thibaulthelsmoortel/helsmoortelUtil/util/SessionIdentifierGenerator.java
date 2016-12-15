@@ -9,17 +9,16 @@ import java.math.BigInteger;
 import java.security.SecureRandom;
 
 /**
- * @author Thibault Helsmoortel
- */
-
-/**
  * Class for creating and getting session identifiers.
+ *
+ * @author Thibault Helsmoortel
  */
 public final class SessionIdentifierGenerator {
     private SecureRandom random = new SecureRandom();
 
     /**
      * Creates a new session identifier and returns it as a String.
+     *
      * @return the newly created session identifier
      */
     public String nextSessionId() {

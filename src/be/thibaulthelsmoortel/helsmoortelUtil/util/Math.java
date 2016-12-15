@@ -8,14 +8,10 @@ package be.thibaulthelsmoortel.helsmoortelUtil.util;
 import java.util.List;
 
 /**
+ * Class for regularly used math methods.
+ *
  * @author Thibault Helsmoortel
  */
-
-
-/**
- * Class for regularly used math methods.
- */
-
 public final class Math {
 
     public static final int BMI_CONVERSION_POUNDS_AND_INCHES = 703;
@@ -28,6 +24,7 @@ public final class Math {
 
     /**
      * Returns the difference between two {@code int} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the difference between {@code a} and {@code b}
@@ -40,6 +37,7 @@ public final class Math {
 
     /**
      * Returns the difference between two {@code long} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the difference between {@code a} and {@code b}
@@ -52,6 +50,7 @@ public final class Math {
 
     /**
      * Returns the difference between two {@code float} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the difference between {@code a} and {@code b}
@@ -64,6 +63,7 @@ public final class Math {
 
     /**
      * Returns the difference between two {@code double} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the difference between {@code a} and {@code b}
@@ -76,6 +76,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code int} value is positive.
+     *
      * @param i the value to check
      * @return a {@code boolean} indicating if the value is positive
      */
@@ -85,6 +86,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code long} value is positive.
+     *
      * @param l the value to check
      * @return a {@code boolean} indicating if the value is positive
      */
@@ -94,6 +96,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code float} value is positive.
+     *
      * @param f the value to check
      * @return a {@code boolean} indicating if the value is positive
      */
@@ -103,6 +106,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code double} value is positive.
+     *
      * @param d the value to check
      * @return a {@code boolean} indicating if the value is positive
      */
@@ -112,6 +116,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code int} value is negative.
+     *
      * @param i the value to check
      * @return a {@code boolean} indicating if the value is negative
      */
@@ -121,6 +126,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code long} value is negative.
+     *
      * @param l the value to check
      * @return a {@code boolean} indicating if the value is negative
      */
@@ -130,6 +136,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code float} value is negative.
+     *
      * @param f the value to check
      * @return a {@code boolean} indicating if the value is negative
      */
@@ -139,6 +146,7 @@ public final class Math {
 
     /**
      * Returns a {@code boolean} indicating whether a {@code double} value is negative.
+     *
      * @param d the value to check
      * @return a {@code boolean} indicating if the value is negative
      */
@@ -148,9 +156,10 @@ public final class Math {
 
     /**
      * Returns a random value between two {@code int} values.
+     *
      * @param lower minimum value
      * @param upper maximum value
-     * @return  a random value between {@code lower} and {@code upper}
+     * @return a random value between {@code lower} and {@code upper}
      */
     public static double randomBetween(int lower, int upper) {
         return (java.lang.Math.random() * upper) + lower;
@@ -158,9 +167,10 @@ public final class Math {
 
     /**
      * Returns a random value between two {@code double} values.
+     *
      * @param lower minimum value
      * @param upper maximum value
-     * @return  a random value between {@code lower} and {@code upper}
+     * @return a random value between {@code lower} and {@code upper}
      */
     public static double randomBetween(double lower, double upper) {
         return (java.lang.Math.random() * upper) + lower;
@@ -168,6 +178,7 @@ public final class Math {
 
     /**
      * Returns the greatest common divisor of two {@code int} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the greatest common divisor of {@code a} and {@code b}
@@ -180,6 +191,7 @@ public final class Math {
 
     /**
      * Returns the lowest common divisor of two {@code int} values.
+     *
      * @param a an argument
      * @param b another argument
      * @return the lowest common divisor of {@code a} and {@code b}
@@ -190,6 +202,7 @@ public final class Math {
 
     /**
      * Returns the average of an array of {@code int} values.
+     *
      * @param values array of {@code int} values
      * @return the average of the given values
      */
@@ -206,6 +219,7 @@ public final class Math {
 
     /**
      * Returns the average of an array of {@code double} values.
+     *
      * @param values array of {@code double} values
      * @return the average of the given values
      */
@@ -223,6 +237,7 @@ public final class Math {
 
     /**
      * Returns the average of a list of {@code double} values.
+     *
      * @param values list of {@code double} values
      * @return the average of the given values
      */
@@ -240,7 +255,8 @@ public final class Math {
 
     /**
      * Returns the Body Mass Index (BMI) of an individual
-     * @param mass mass of the individual in kilograms
+     *
+     * @param mass   mass of the individual in kilograms
      * @param height height of the individual metres
      * @return the BMI of the individual
      */
@@ -250,8 +266,9 @@ public final class Math {
 
     /**
      * Returns the Body Mass Index (BMI) of an individual
-     * @param mass mass of the individual in kilograms or pounds
-     * @param height height of the individual in metres or inches
+     *
+     * @param mass                 mass of the individual in kilograms or pounds
+     * @param height               height of the individual in metres or inches
      * @param isMetresAndKilograms {@code boolean} indicating if kilograms and metres are used (true) or pounds and inches (false)
      * @return the BMI of the individual
      */
@@ -263,6 +280,7 @@ public final class Math {
 
     /**
      * Returns whether 2 fractures are in proportion.
+     *
      * @param a counter of the first fracture
      * @param b denominator of the first fracture
      * @param c counter of the second fracture
@@ -270,12 +288,12 @@ public final class Math {
      * @return {@code boolean} indicating if both fractures are in proportion (true when they are)
      */
     public static boolean isProportion(int a, int b, int c, int d) {
-        if (a * d == b * c) return true;
-        else return false;
+        return a * d == b * c;
     }
 
     /**
      * Returns whether 2 fractures are in proportion.
+     *
      * @param a counter of the first fracture
      * @param b denominator of the first fracture
      * @param c counter of the second fracture
@@ -283,7 +301,6 @@ public final class Math {
      * @return {@code boolean} indicating if both fractures are in proportion (true when they are)
      */
     public static boolean isProportion(double a, double b, double c, double d) {
-        if (a * d == b * c) return true;
-        else return false;
+        return a * d == b * c;
     }
 }

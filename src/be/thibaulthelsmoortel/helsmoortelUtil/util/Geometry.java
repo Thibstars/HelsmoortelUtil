@@ -5,16 +5,13 @@
 
 package be.thibaulthelsmoortel.helsmoortelUtil.util;
 
-/**
- * @author Thibault Helsmoortel
- */
-
 import java.lang.Math;
 
 /**
  * Class for regularly used geometry math methods.
+ *
+ * @author Thibault Helsmoortel
  */
-
 public final class Geometry {
 
     /**
@@ -25,6 +22,7 @@ public final class Geometry {
 
     /**
      * Returns the perimeter of a square
+     *
      * @param side length of one side
      * @return the perimeter
      */
@@ -34,8 +32,9 @@ public final class Geometry {
 
     /**
      * Returns the perimeter of a rectangle
+     *
      * @param length length
-     * @param width width
+     * @param width  width
      * @return the perimeter
      */
     public static double perimeterRectangle(double length, double width) {
@@ -44,6 +43,7 @@ public final class Geometry {
 
     /**
      * Returns the perimeter of a triangle
+     *
      * @param side1 length of side 1
      * @param side2 length of side 2
      * @param side3 length of side 3
@@ -55,6 +55,7 @@ public final class Geometry {
 
     /**
      * Returns the perimeter of a trapezoid
+     *
      * @param side1 length of side 1
      * @param side2 length of side 2
      * @param side3 length of side 3
@@ -67,6 +68,7 @@ public final class Geometry {
 
     /**
      * Returns the perimeter of a circle
+     *
      * @param radius radius of the circle
      * @return the perimeter
      */
@@ -76,6 +78,7 @@ public final class Geometry {
 
     /**
      * Returns the area of a square
+     *
      * @param side length of one side
      * @return the area
      */
@@ -85,8 +88,9 @@ public final class Geometry {
 
     /**
      * Returns the area of a rectangle
+     *
      * @param length length
-     * @param width width
+     * @param width  width
      * @return the area
      */
     public static double areaRectangle(double length, double width) {
@@ -95,7 +99,8 @@ public final class Geometry {
 
     /**
      * Returns the area of a triangle
-     * @param base length of the base
+     *
+     * @param base   length of the base
      * @param height length of the height
      * @return the area
      */
@@ -105,8 +110,9 @@ public final class Geometry {
 
     /**
      * Returns the area of a trapezoid
-     * @param base1 length of the first base
-     * @param base2 length of the second base
+     *
+     * @param base1  length of the first base
+     * @param base2  length of the second base
      * @param height length of the height
      * @return the area
      */
@@ -116,6 +122,7 @@ public final class Geometry {
 
     /**
      * Returns the area of a circle
+     *
      * @param radius radius of the circle
      * @return the area
      */
@@ -125,6 +132,7 @@ public final class Geometry {
 
     /**
      * Returns the volume of a cube
+     *
      * @param side length of one side
      * @return the volume
      */
@@ -134,6 +142,7 @@ public final class Geometry {
 
     /**
      * Returns the volume of a box
+     *
      * @param length length
      * @param width  width
      * @param height height
@@ -145,18 +154,20 @@ public final class Geometry {
 
     /**
      * Returns the volume of a sphere
+     *
      * @param radius radius of the sphere
      * @return the volume
      */
     public static double volumeSphere(double radius) {
-        return (4/3) * Math.PI * Math.pow(radius, 3);
+        return (4 / 3) * Math.PI * Math.pow(radius, 3);
     }
 
     /**
      * Returns the volume of a triangular prism
-     * @param baseTriangle base of the triangle
+     *
+     * @param baseTriangle   base of the triangle
      * @param heightTriangle height of the triangle
-     * @param heightPrism height of the prism
+     * @param heightPrism    height of the prism
      * @return the volume
      */
     public static double volumeTriangularPrism(double baseTriangle, double heightTriangle, double heightPrism) {
@@ -165,6 +176,7 @@ public final class Geometry {
 
     /**
      * Returns the volume of a cylinder
+     *
      * @param radius radius of the cylinder
      * @param height height of the cylinder
      * @return the volume
@@ -175,6 +187,7 @@ public final class Geometry {
 
     /**
      * Returns the length of the hypotenuse (c) of a right triangle
+     *
      * @param a the triangle's first right side
      * @param b the triangle's second right side
      * @return the length of the hypotenuse (c) of the right triangle
@@ -184,8 +197,7 @@ public final class Geometry {
         if (Math.abs(a) > Math.abs(b)) {
             c = b / a;
             c = Math.abs(a) * Math.sqrt(1 + c * c);
-        }
-        else if (b != 0) {
+        } else if (b != 0) {
             c = a / b;
             c = Math.abs(b) * Math.sqrt(1 + c * c);
         }

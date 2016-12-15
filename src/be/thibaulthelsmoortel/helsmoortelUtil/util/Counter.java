@@ -6,21 +6,19 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util;
 
 /**
+ * Class containing basic and advanced counting features.
+ *
  * @author Thibault Helsmoortel
  */
-
-/**
- * Class containing basic and advanced counting features.
- */
 public class Counter {
-    //Error messages
-    private static final String ERROR_BOUNDS = "Counter bounds exceeded!";
+
     public static final String ERROR_COUNT = "Count should be between minVal and maxVal!";
     public static final String ERROR_MIN_VAL = "Minimum value should be equal to or smaller than the initial count!";
     public static final String ERROR_MAX_VAL = "Maximum value should be equal to or greater than the initial count!";
     public static final String ERROR_VAL = "Value should be between minimum and maximum values!";
     public static final String ERROR__RESET = "Reset count must be between minVal and maxVal!";
-
+    //Error messages
+    private static final String ERROR_BOUNDS = "Counter bounds exceeded!";
     //The initial count the Counter was set to
     private int initialCount;
     //The main counter
@@ -44,6 +42,7 @@ public class Counter {
 
     /**
      * Constructor to create a counter that starts from a set count.
+     *
      * @param count the count to start from
      */
     public Counter(int count) {
@@ -56,8 +55,9 @@ public class Counter {
 
     /**
      * Constructor to create a counter that starts from a set count and to set the size of hops.
+     *
      * @param count the count to start from
-     * @param hop the default in- or decrement value
+     * @param hop   the default in- or decrement value
      */
     public Counter(int count, int hop) {
         this(count);
@@ -67,8 +67,9 @@ public class Counter {
     /**
      * Constructor to create a counter that starts from a set count, to set the size of hops and to set
      * minimum and maximum counter values.
-     * @param count the count to start from
-     * @param hop the default in- or decrement value
+     *
+     * @param count  the count to start from
+     * @param hop    the default in- or decrement value
      * @param minVal the minimum value of the counter
      * @param maxVal the maximum value of the counter
      */
@@ -80,6 +81,7 @@ public class Counter {
 
     /**
      * Returns the current count.
+     *
      * @return the current counter value
      */
     public int getCount() {
@@ -88,6 +90,7 @@ public class Counter {
 
     /**
      * Sets the count to a specific number.
+     *
      * @param count the new counter value
      */
     public void setCount(int count) {
@@ -97,6 +100,7 @@ public class Counter {
 
     /**
      * Returns the initial count.
+     *
      * @return the initial counter value
      */
     public int getInitialCount() {
@@ -105,6 +109,7 @@ public class Counter {
 
     /**
      * Sets the initial count. Useful for the reset() method.
+     *
      * @param initialCount the initial counter value
      */
     public void setInitialCount(int initialCount) {
@@ -114,6 +119,7 @@ public class Counter {
 
     /**
      * Returns the default in- and decrement value.
+     *
      * @return the default in- and decrement value
      */
     public int getHop() {
@@ -122,6 +128,7 @@ public class Counter {
 
     /**
      * Sets the default in- and decrement value.
+     *
      * @param hop the default in- and decrement value
      */
     public void setHop(int hop) {
@@ -130,6 +137,7 @@ public class Counter {
 
     /**
      * Returns the minimum value of the counter.
+     *
      * @return the minimum value of the counter
      */
     public int getMinVal() {
@@ -138,15 +146,17 @@ public class Counter {
 
     /**
      * Sets the minimum value of the counter.
+     *
      * @param minVal the minimum value of the counter
      */
     public void setMinVal(int minVal) {
-        if(minVal <= initialCount) this.minVal = minVal;
+        if (minVal <= initialCount) this.minVal = minVal;
         else throw new IllegalArgumentException(ERROR_MIN_VAL);
     }
 
     /**
      * Returns the maximum value of the counter.
+     *
      * @return the maximum value of the counter
      */
     public int getMaxVal() {
@@ -155,6 +165,7 @@ public class Counter {
 
     /**
      * Sets the maximum value of the counter.
+     *
      * @param maxVal the maximum value of the counter
      */
     public void setMaxVal(int maxVal) {
@@ -164,6 +175,7 @@ public class Counter {
 
     /**
      * Sets the minimum and maximum values of the counter.
+     *
      * @param minVal the minimum value of the counter
      * @param maxVal the maximum value of the counter
      */
@@ -174,7 +186,7 @@ public class Counter {
 
     /**
      * Increments the counter (with the set hop value).
-     *
+     * <p>
      * Example: count = 5; hop = 1 (default hop value)
      * After method execution: count = 6 (similar to count++!)
      */
@@ -195,6 +207,7 @@ public class Counter {
 
     /**
      * Increments the counter and returns the new count.
+     *
      * @return the count after incrementing
      */
     public int incrementThenGet() {
@@ -204,6 +217,7 @@ public class Counter {
 
     /**
      * Decrements the counter and returns the new count.
+     *
      * @return the count after decrementing
      */
     public int decrementThenGet() {
@@ -213,6 +227,7 @@ public class Counter {
 
     /**
      * Returns the count and increments it later.
+     *
      * @return the count before incrementing
      */
     public int getThenIncrement() {
@@ -223,6 +238,7 @@ public class Counter {
 
     /**
      * Returns the count and decrements it later.
+     *
      * @return the count before decrementing
      */
     public int getThenDecrement() {
@@ -233,6 +249,7 @@ public class Counter {
 
     /**
      * Increments the counter with a given value (hop not used).
+     *
      * @param amount value to increment the counter with
      */
     public void incrementBy(int amount) {
@@ -242,6 +259,7 @@ public class Counter {
 
     /**
      * Decrements the counter with a given value (hop not used).
+     *
      * @param amount value to decrement the counter with
      */
     public void decrementBy(int amount) {
@@ -251,6 +269,7 @@ public class Counter {
 
     /**
      * Increments the counter with a given value (hop not used) and returns the new count.
+     *
      * @param amount value to increment the counter with
      * @return the count after incrementing
      */
@@ -261,6 +280,7 @@ public class Counter {
 
     /**
      * Decrements the counter with a given value (hop not used) and returns the new count.
+     *
      * @param amount value to decrement the counter with
      * @return the count after decrementing
      */
@@ -271,17 +291,19 @@ public class Counter {
 
     /**
      * Returns the count and increments it with a given value (hop not used) later.
+     *
      * @param amount value to increment the counter with
      * @return the count before incrementing
      */
     public int getThenIncrementBy(int amount) {
-        int temp =  this.count;
+        int temp = this.count;
         incrementBy(amount);
         return temp;
     }
 
     /**
      * Returns the count and decrements it with a given value (hop not used) later.
+     *
      * @param amount value to decrement the counter with
      * @return the count before decrementing
      */
@@ -293,6 +315,7 @@ public class Counter {
 
     /**
      * Returns the distance from the current count to a given value.
+     *
      * @param value value to check the distance from
      * @return the distance from the current count to the given value
      */
@@ -305,6 +328,7 @@ public class Counter {
 
     /**
      * Returns the distance from the current count to the minimum value.
+     *
      * @return the distance from the current count to the minimum value
      */
     public int distanceToMinVal() {
@@ -313,6 +337,7 @@ public class Counter {
 
     /**
      * Returns the distance from the current count to the maximum value.
+     *
      * @return the distance from the current count to the maximum value
      */
     public int distanceToMaxVal() {
@@ -321,6 +346,7 @@ public class Counter {
 
     /**
      * Returns the current position of the counter as a percentage (where minVal = 0% and maxVal = 100%).
+     *
      * @return the current position of the counter as a percentage (where minVal = 0% and maxVal = 100%)
      */
     public float currentPosition() {
@@ -337,6 +363,7 @@ public class Counter {
 
     /**
      * Resets the counter to a new value (does not change the initial count).
+     *
      * @param count the new counter value to reset the counter to
      */
     public void resetTo(int count) {
@@ -347,7 +374,8 @@ public class Counter {
     /**
      * Resets the counter to a new value. If the second parameter is true, the initial count will be changed
      * to this new value (if false, it doesn't).
-     * @param count the new counter value to reset the counter to
+     *
+     * @param count     the new counter value to reset the counter to
      * @param initCount flag indicating whether to set the initial count or not
      */
     public void resetTo(int count, boolean initCount) {

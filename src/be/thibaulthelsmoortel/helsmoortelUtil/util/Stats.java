@@ -6,9 +6,10 @@
 package be.thibaulthelsmoortel.helsmoortelUtil.util;
 
 /**
+ * Class for regularly used stats methods.
+ *
  * @author Thibault Helsmoortel
  */
-
 public final class Stats {
 
     /**
@@ -19,6 +20,7 @@ public final class Stats {
 
     /**
      * Returns the maximum value in the array a[], -infinity if no such value.
+     *
      * @param a array of double values
      * @return the maximum value of the given array
      */
@@ -33,7 +35,8 @@ public final class Stats {
 
     /**
      * Returns the maximum value in the subarray a[lo..hi], -infinity if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return the maximum value of the given array
@@ -51,6 +54,7 @@ public final class Stats {
 
     /**
      * Returns the maximum value in the array a[], Integer.MIN_VALUE if no such value.
+     *
      * @param a array of integer values
      * @return the maximum value of the given array
      */
@@ -64,6 +68,7 @@ public final class Stats {
 
     /**
      * Returns the minimum value in the array a[], +infinity if no such value.
+     *
      * @param a array of double values
      * @return the minimum value of the given array
      */
@@ -78,7 +83,8 @@ public final class Stats {
 
     /**
      * Returns the minimum value in the subarray a[lo..hi], +infinity if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return the minimum value of the given array
@@ -96,6 +102,7 @@ public final class Stats {
 
     /**
      * Returns the minimum value in the array a[], Integer.MAX_VALUE if no such value.
+     *
      * @param a array of integer values
      * @return the minimum value of the given array
      */
@@ -109,6 +116,7 @@ public final class Stats {
 
     /**
      * Returns the average value in the array a[], NaN if no such value.
+     *
      * @param a array of double values
      * @return the average value in the array
      */
@@ -120,7 +128,8 @@ public final class Stats {
 
     /**
      * Returns the average value in the subarray a[lo..hi], NaN if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return the average value in the array
@@ -136,6 +145,7 @@ public final class Stats {
 
     /**
      * Returns the average value in the array a[], NaN if no such value.
+     *
      * @param a array of integer values
      * @return the average value in the array
      */
@@ -150,6 +160,7 @@ public final class Stats {
 
     /**
      * Returns the sample variance in the array a[], NaN if no such value
+     *
      * @param a array of double values
      * @return sample variance in the array
      */
@@ -162,9 +173,11 @@ public final class Stats {
         }
         return sum / (a.length - 1);
     }
+
     /**
      * Returns the sample variance in the subarray a[lo..hi], NaN if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return sample variance in the array
@@ -184,6 +197,7 @@ public final class Stats {
 
     /**
      * Returns the sample variance in the array a[], NaN if no such value.
+     *
      * @param a array of integer values
      * @return sample variance in the array
      */
@@ -199,6 +213,7 @@ public final class Stats {
 
     /**
      * Returns the population variance in the array a[], NaN if no such value.
+     *
      * @param a array of double values
      * @return population variance in the array
      */
@@ -214,7 +229,8 @@ public final class Stats {
 
     /**
      * Returns the population variance in the subarray a[lo..hi], NaN if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return population variance in the array
@@ -234,15 +250,18 @@ public final class Stats {
 
     /**
      * Returns the sample standard deviation in the array a[], NaN if no such value.
+     *
      * @param a array of double values
      * @return sample standar ddeviation in the array
      */
     public static double stddev(double[] a) {
         return java.lang.Math.sqrt(var(a));
     }
+
     /**
      * Returns the sample standard deviation in the subarray a[lo..hi], NaN if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return sample standard deviation in the array
@@ -253,6 +272,7 @@ public final class Stats {
 
     /**
      * Returns the sample standard deviation in the array a[], NaN if no such value.
+     *
      * @param a array of integer values
      * @return sample standard deviation in the array
      */
@@ -262,6 +282,7 @@ public final class Stats {
 
     /**
      * Returns the population standard deviation in the array a[], NaN if no such value.
+     *
      * @param a array of double values
      * @return population standard deviation in the array
      */
@@ -271,7 +292,8 @@ public final class Stats {
 
     /**
      * Returns the population standard deviation in the subarray a[lo..hi], NaN if no such value.
-     * @param a array of double values
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return population standard deviation in the array
@@ -282,6 +304,7 @@ public final class Stats {
 
     /**
      * Returns the sum of all values in the array a[].
+     *
      * @param a array of double values
      * @return sum of all values in the array
      */
@@ -294,8 +317,9 @@ public final class Stats {
     }
 
     /**
-     *  Returns the sum of all values in the subarray a[lo..hi].
-     * @param a array of double values
+     * Returns the sum of all values in the subarray a[lo..hi].
+     *
+     * @param a  array of double values
      * @param lo index of the first item in the array
      * @param hi index of the last item in the array
      * @return sum of all values in the array
@@ -312,6 +336,7 @@ public final class Stats {
 
     /**
      * Returns the sum of all values in the array a[].
+     *
      * @param a array of integer values
      * @return sum of all values in the array
      */
